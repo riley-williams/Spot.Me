@@ -14,6 +14,15 @@
 	<dict/>
 	<key>Riley Williams</key>
 	<dict>
+		<key>User Interface Prototyping</key>
+		<dict>
+			<key>Story Card</key>
+			<integer>0</integer>
+			<key>Start Date</key>
+			<date>2019-02-22T23:00:17Z</date>
+			<key>End Date</key>
+			<date>2019-02-23T00:19:24Z</date>
+		</dict>
 		<key>Chart API First Run</key>
 		<dict>
 			<key>Story Card</key>
