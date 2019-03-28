@@ -24,13 +24,13 @@
 		BF5D34F52210C9BD0000A5C4 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D34F42210C9BD0000A5C4 /* ComplicationController.swift */; };
 		BF5D34F72210C9BE0000A5C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5D34F62210C9BE0000A5C4 /* Assets.xcassets */; };
 		BF5D350E2210CC760000A5C4 /* SMChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D350D2210CC760000A5C4 /* SMChartView.swift */; };
-		BF5D35122210D2F60000A5C4 /* SMLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D35112210D2F60000A5C4 /* SMLineView.swift */; };
-		BF5D35152210D3860000A5C4 /* SMBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D35142210D3860000A5C4 /* SMBarView.swift */; };
-		BF5D35172210D3AE0000A5C4 /* SMDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D35162210D3AE0000A5C4 /* SMDotView.swift */; };
-		BF5D351B2210DCBE0000A5C4 /* SMGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D351A2210DCBE0000A5C4 /* SMGridView.swift */; };
+		BF5D35122210D2F60000A5C4 /* SMLineLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D35112210D2F60000A5C4 /* SMLineLayer.swift */; };
+		BF5D35152210D3860000A5C4 /* SMBarLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D35142210D3860000A5C4 /* SMBarLayer.swift */; };
+		BF5D35172210D3AE0000A5C4 /* SMDotLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D35162210D3AE0000A5C4 /* SMDotLayer.swift */; };
 		BF5D351E2210E14B0000A5C4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5D351D2210E14B0000A5C4 /* HealthKit.framework */; };
-		BF5D35232210E6AE0000A5C4 /* SMChartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D35222210E6AE0000A5C4 /* SMChartDataSource.swift */; };
 		BF5D3525221AC2600000A5C4 /* Agile Log.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF5D3524221AC2600000A5C4 /* Agile Log.plist */; };
+		BF8B0D7B224D74A2006A6982 /* SMLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8B0D7A224D74A2006A6982 /* SMLayer.swift */; };
+		BF8B0D7D224D76D4006A6982 /* SMAreaLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8B0D7C224D76D4006A6982 /* SMAreaLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,14 +116,14 @@
 		BF5D34F82210C9BE0000A5C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF5D34F92210C9BE0000A5C4 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		BF5D350D2210CC760000A5C4 /* SMChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMChartView.swift; sourceTree = "<group>"; };
-		BF5D35112210D2F60000A5C4 /* SMLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMLineView.swift; sourceTree = "<group>"; };
-		BF5D35142210D3860000A5C4 /* SMBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMBarView.swift; sourceTree = "<group>"; };
-		BF5D35162210D3AE0000A5C4 /* SMDotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMDotView.swift; sourceTree = "<group>"; };
-		BF5D351A2210DCBE0000A5C4 /* SMGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMGridView.swift; sourceTree = "<group>"; };
+		BF5D35112210D2F60000A5C4 /* SMLineLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMLineLayer.swift; sourceTree = "<group>"; };
+		BF5D35142210D3860000A5C4 /* SMBarLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMBarLayer.swift; sourceTree = "<group>"; };
+		BF5D35162210D3AE0000A5C4 /* SMDotLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMDotLayer.swift; sourceTree = "<group>"; };
 		BF5D351D2210E14B0000A5C4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		BF5D351F2210E14B0000A5C4 /* Spot Me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Spot Me.entitlements"; sourceTree = "<group>"; };
-		BF5D35222210E6AE0000A5C4 /* SMChartDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMChartDataSource.swift; sourceTree = "<group>"; };
 		BF5D3524221AC2600000A5C4 /* Agile Log.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Agile Log.plist"; sourceTree = "<group>"; };
+		BF8B0D7A224D74A2006A6982 /* SMLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMLayer.swift; sourceTree = "<group>"; };
+		BF8B0D7C224D76D4006A6982 /* SMAreaLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMAreaLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +191,8 @@
 				BF5D351F2210E14B0000A5C4 /* Spot Me.entitlements */,
 				BF5D34B52210C9B70000A5C4 /* AppDelegate.swift */,
 				BF5D34B72210C9B80000A5C4 /* ViewController.swift */,
-				BF5D35132210D3010000A5C4 /* Chart Views */,
+				BF5D35132210D3010000A5C4 /* Chart View */,
+				BF8B0D7E224D7EA7006A6982 /* Layers */,
 				BF5D34B92210C9B80000A5C4 /* Main.storyboard */,
 				BF5D34BC2210C9BB0000A5C4 /* Assets.xcassets */,
 				BF5D34BE2210C9BB0000A5C4 /* LaunchScreen.storyboard */,
@@ -242,17 +243,12 @@
 			path = "Spot Me WatchKit Extension";
 			sourceTree = "<group>";
 		};
-		BF5D35132210D3010000A5C4 /* Chart Views */ = {
+		BF5D35132210D3010000A5C4 /* Chart View */ = {
 			isa = PBXGroup;
 			children = (
 				BF5D350D2210CC760000A5C4 /* SMChartView.swift */,
-				BF5D35222210E6AE0000A5C4 /* SMChartDataSource.swift */,
-				BF5D351A2210DCBE0000A5C4 /* SMGridView.swift */,
-				BF5D35142210D3860000A5C4 /* SMBarView.swift */,
-				BF5D35162210D3AE0000A5C4 /* SMDotView.swift */,
-				BF5D35112210D2F60000A5C4 /* SMLineView.swift */,
 			);
-			path = "Chart Views";
+			path = "Chart View";
 			sourceTree = "<group>";
 		};
 		BF5D351C2210E14B0000A5C4 /* Frameworks */ = {
@@ -261,6 +257,18 @@
 				BF5D351D2210E14B0000A5C4 /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF8B0D7E224D7EA7006A6982 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				BF8B0D7A224D74A2006A6982 /* SMLayer.swift */,
+				BF5D35112210D2F60000A5C4 /* SMLineLayer.swift */,
+				BF5D35162210D3AE0000A5C4 /* SMDotLayer.swift */,
+				BF5D35142210D3860000A5C4 /* SMBarLayer.swift */,
+				BF8B0D7C224D76D4006A6982 /* SMAreaLayer.swift */,
+			);
+			path = Layers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,14 +469,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF5D35152210D3860000A5C4 /* SMBarView.swift in Sources */,
-				BF5D35122210D2F60000A5C4 /* SMLineView.swift in Sources */,
+				BF8B0D7D224D76D4006A6982 /* SMAreaLayer.swift in Sources */,
+				BF5D35152210D3860000A5C4 /* SMBarLayer.swift in Sources */,
+				BF5D35122210D2F60000A5C4 /* SMLineLayer.swift in Sources */,
 				BF5D34B82210C9B80000A5C4 /* ViewController.swift in Sources */,
-				BF5D35172210D3AE0000A5C4 /* SMDotView.swift in Sources */,
+				BF5D35172210D3AE0000A5C4 /* SMDotLayer.swift in Sources */,
 				BF5D34B62210C9B70000A5C4 /* AppDelegate.swift in Sources */,
-				BF5D351B2210DCBE0000A5C4 /* SMGridView.swift in Sources */,
 				BF5D350E2210CC760000A5C4 /* SMChartView.swift in Sources */,
-				BF5D35232210E6AE0000A5C4 /* SMChartDataSource.swift in Sources */,
+				BF8B0D7B224D74A2006A6982 /* SMLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,6 +766,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BD5L3C9JKH;
 				INFOPLIST_FILE = "Spot Me/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -777,6 +786,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BD5L3C9JKH;
 				INFOPLIST_FILE = "Spot Me/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

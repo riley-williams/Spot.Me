@@ -8,27 +8,59 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SMChartDataSource {
 	
 	@IBOutlet weak var chartContainer: UIView!
-	var testSource = SMChartDataSource()
-	var grid:SMGridView!
-	var lc:SMLineView!
+	@IBOutlet weak var chartView: SMChartView!
 	
-    override func viewDidLoad() {
+	var chartLayers:[SMLayer] = []
+	
+	override func viewDidLoad() {
 		super.viewDidLoad()
-		grid = SMGridView(frame:chartContainer.frame)
-		grid.frame.origin = CGPoint(x: 0, y: 0)
-		grid.dataSource = self.testSource
-		self.chartContainer.addSubview(grid)
 		
+		chartView.contentRect = CGRect(x: 0, y: 0, width: 10, height: 120)
+
+		//test line layer
+		let lineLayer = SMLineLayer()
+		lineLayer.data = [(1,50), (2,10), (3,15), (4,25), (5,40), (6,60), (7,85), (8,100), (9,110), (10,60), ].map {CGPoint(x: $0.0, y: $0.1)}
 		
-		lc = SMLineView(frame:chartContainer.frame)
-		lc.frame.origin = CGPoint(x: 0, y: 0)
-		lc.dataSource = self.testSource
-		self.chartContainer.addSubview(lc)
-    }
-
-
+		//pack layers
+		self.chartLayers = [lineLayer]
+		
+		chartView.dataSource = self
+	}
+	
+	
+	func layers() -> [SMLayerType] {
+		return chartLayers.map { $0.type }
+	}
+	
+	func visibleData(rect: CGRect, layer: Int) -> [Any] {
+		//Attempt to only send content that will appear onscreen
+		let layer = chartLayers[layer]
+		let visibleRect = chartView.contentRect
+		switch layer.type {
+		case .Line:
+			let t = (layer as! SMLineLayer).data.filter { visibleRect.contains($0) }
+			return t
+		case .Dot:
+			return (layer as! SMDotLayer).data.filter { visibleRect.contains($0) }
+		case .Bar:
+			return (layer as! SMBarLayer).data.filter { visibleRect.contains(CGRect(origin: $0.origin, size: CGSize(width: 0, height: $0.height))) }
+		case .Area:
+			return (layer as! SMAreaLayer).data.filter { visibleRect.contains(CGRect(origin: $0.origin, size: CGSize(width: 0, height: $0.height))) }
+		default:
+			assertionFailure("Chart type not implemented")
+		}
+		return []
+	}
+	
+	func gridLines(rect: CGRect) -> (horizontal: [CGFloat], vertical: [CGFloat]) {
+		return (horizontal: [0,20,40,60,80,100,120], vertical:[])
+	}
+	
+	
+	
+	
 }
 
