@@ -38,10 +38,10 @@ class ViewController: UIViewController, SMChartDataSource {
 	func visibleData(rect: CGRect, layer: Int) -> [Any] {
 		//Attempt to only send content that will appear onscreen
 		let layer = chartLayers[layer]
-		let visibleRect = chartView.contentRect
+		let visibleRect = chartView.safeRect
 		switch layer.type {
 		case .Line:
-			let t = (layer as! SMLineLayer).data.filter { visibleRect.contains($0) }
+			let t = (layer as! SMLineLayer).data.filter { $0.x >= visibleRect.minX && $0.x <= visibleRect.maxX }
 			return t
 		case .Dot:
 			return (layer as! SMDotLayer).data.filter { visibleRect.contains($0) }

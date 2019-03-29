@@ -26,17 +26,21 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 	}()
 	
 	var contentRect:CGRect = CGRect(x: 0, y: 115, width: 8, height: 30) //test values
-	
+	lazy var safeRect:CGRect = {
+		let dx = self.contentRect.width*0.1
+		let dy = self.contentRect.height*0.1
+		return self.contentRect.insetBy(dx: -dx, dy: -dy)
+	}()
 	
 	override func draw(_ rect: CGRect) {
 		self.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
-		
+		self.layer.sublayers?.forEach { $0.removeFromSuperlayer() }
 		if let source = self.dataSource {
 			let layerTypes = source.layers()
 			
 			let grid = source.gridLines(rect: contentRect)
 			drawGrid(horizontalLines: grid.horizontal, verticalLines: grid.vertical)
-		
+			
 			for idx in 0..<layerTypes.count {
 				let data = source.visibleData(rect: contentRect, layer: idx)
 				switch layerTypes[idx] {
@@ -65,9 +69,18 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 		
 		if horizontalLines.count > 0 {
 			for y in horizontalLines {
-				let vY = CtoVy(y)
-				path.move(to: CGPoint(x: 0, y: vY))
-				path.addLine(to: CGPoint(x: width, y: vY))
+				if safeRect.contains(CGPoint(x:safeRect.midX, y:y)) {
+					let vY = CtoVy(y)
+					path.move(to: CGPoint(x: 0, y: vY))
+					path.addLine(to: CGPoint(x: width, y: vY))
+					
+					let txtLayer = CATextLayer()
+					txtLayer.string = "\(y)"
+					txtLayer.frame = CGRect(x: 5, y: vY, width: 100, height: 50)
+					txtLayer.fontSize = 12
+					txtLayer.foregroundColor = UIColor.black.cgColor
+					self.layer.addSublayer(txtLayer)
+				}
 			}
 		}
 		if verticalLines.count > 0 {
@@ -98,15 +111,6 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 			path.stroke()
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -164,7 +168,6 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 	
 	
 	@objc func handlePan(_ sender:UIPanGestureRecognizer) {
-		//print("pan")
 		let translation = sender.translation(in: self)
 		
 		let contentTranslation = CGPoint(x: -translation.x/width*contentRect.width, y: translation.y/height*contentRect.height)
@@ -177,17 +180,14 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 	@objc func handlePinch(_ sender:UIPinchGestureRecognizer) {
 		let scale = sender.scale
 		
-		//let t1 = sender.location(ofTouch: 0, in: self)
-		//let t2 = sender.location(ofTouch: 1, in: self)
 		
-		//contentRect.size = contentRect.size * scale
 		let dx = (scale-1)*contentRect.width
 		let dy = (scale-1)*contentRect.height
 		contentRect = contentRect.insetBy(dx: dx, dy: dy)
 		sender.scale = 1
 		self.setNeedsDisplay()
-		//print("pinch")
 	}
+	
 	func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
 		return true
 	}
