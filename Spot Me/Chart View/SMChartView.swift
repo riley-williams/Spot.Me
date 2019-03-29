@@ -129,7 +129,7 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 	
 	//convert a point from the view space to content space
 	func VtoC(_ p:CGPoint) -> CGPoint {
-		return CGPoint(x:CtoVx(p.x), y:CtoVy(p.y))
+		return CGPoint(x:VtoCx(p.x)/10, y:VtoCy(p.y)/10)
 	}
 	
 	//convert a value from the view x space to content x space
@@ -164,15 +164,39 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 	
 	
 	@objc func handlePan(_ sender:UIPanGestureRecognizer) {
-		print("pan")
-	}
-	@objc func handlePinch(_ sender:UIPanGestureRecognizer) {
-		print("pinch")
+		//print("pan")
+		let translation = sender.translation(in: self)
+		
+		let contentTranslation = CGPoint(x: -translation.x/width*contentRect.width, y: translation.y/height*contentRect.height)
+		contentRect.origin = contentRect.origin + contentTranslation
+		
+		sender.setTranslation(CGPoint.zero, in: self)
+		self.setNeedsDisplay()
 	}
 	
+	@objc func handlePinch(_ sender:UIPinchGestureRecognizer) {
+		let scale = sender.scale
+		
+		//let t1 = sender.location(ofTouch: 0, in: self)
+		//let t2 = sender.location(ofTouch: 1, in: self)
+		
+		//contentRect.size = contentRect.size * scale
+		let dx = (scale-1)*contentRect.width
+		let dy = (scale-1)*contentRect.height
+		contentRect = contentRect.insetBy(dx: dx, dy: dy)
+		sender.scale = 1
+		self.setNeedsDisplay()
+		//print("pinch")
+	}
+	func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+		return true
+	}
 	
 }
 
+func +(a:CGPoint, b:CGPoint) -> CGPoint {
+	return CGPoint(x: a.x+b.x, y: a.y+b.y)
+}
 
 
 protocol SMChartDataSource {
