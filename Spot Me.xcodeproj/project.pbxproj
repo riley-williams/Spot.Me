@@ -31,6 +31,7 @@
 		BF5D3525221AC2600000A5C4 /* Agile Log.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF5D3524221AC2600000A5C4 /* Agile Log.plist */; };
 		BF8B0D7B224D74A2006A6982 /* SMLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8B0D7A224D74A2006A6982 /* SMLayer.swift */; };
 		BF8B0D7D224D76D4006A6982 /* SMAreaLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8B0D7C224D76D4006A6982 /* SMAreaLayer.swift */; };
+		BF9212A02256E70500F4C410 /* SMHealthKitQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF92129F2256E70500F4C410 /* SMHealthKitQuery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		BF5D3524221AC2600000A5C4 /* Agile Log.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Agile Log.plist"; sourceTree = "<group>"; };
 		BF8B0D7A224D74A2006A6982 /* SMLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMLayer.swift; sourceTree = "<group>"; };
 		BF8B0D7C224D76D4006A6982 /* SMAreaLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMAreaLayer.swift; sourceTree = "<group>"; };
+		BF92129F2256E70500F4C410 /* SMHealthKitQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMHealthKitQuery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				BF5D351F2210E14B0000A5C4 /* Spot Me.entitlements */,
 				BF5D34B52210C9B70000A5C4 /* AppDelegate.swift */,
 				BF5D34B72210C9B80000A5C4 /* ViewController.swift */,
+				BF92129F2256E70500F4C410 /* SMHealthKitQuery.swift */,
 				BF5D35132210D3010000A5C4 /* Chart View */,
 				BF8B0D7E224D7EA7006A6982 /* Layers */,
 				BF5D34B92210C9B80000A5C4 /* Main.storyboard */,
@@ -476,6 +479,7 @@
 				BF8B0D7D224D76D4006A6982 /* SMAreaLayer.swift in Sources */,
 				BF5D35152210D3860000A5C4 /* SMBarLayer.swift in Sources */,
 				BF5D35122210D2F60000A5C4 /* SMLineLayer.swift in Sources */,
+				BF9212A02256E70500F4C410 /* SMHealthKitQuery.swift in Sources */,
 				BF5D34B82210C9B80000A5C4 /* ViewController.swift in Sources */,
 				BF5D35172210D3AE0000A5C4 /* SMDotLayer.swift in Sources */,
 				BF5D34B62210C9B70000A5C4 /* AppDelegate.swift in Sources */,
