@@ -375,6 +375,7 @@
 				TargetAttributes = {
 					BF5D34B12210C9B70000A5C4 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
 								enabled = 1;
@@ -383,10 +384,12 @@
 					};
 					BF5D34C52210C9BB0000A5C4 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = BF5D34B12210C9B70000A5C4;
 					};
 					BF5D34D02210C9BC0000A5C4 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = BF5D34B12210C9B70000A5C4;
 					};
 					BF5D34D92210C9BC0000A5C4 = {
@@ -394,6 +397,7 @@
 					};
 					BF5D34E82210C9BD0000A5C4 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -692,7 +696,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
@@ -714,7 +718,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
@@ -773,7 +777,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-Me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -793,7 +797,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-Me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -813,7 +817,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-MeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spot Me.app/Spot Me";
 			};
@@ -834,7 +838,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-MeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spot Me.app/Spot Me";
 			};
@@ -854,7 +858,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-MeUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Spot Me";
 			};
@@ -874,7 +878,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-MeUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Spot Me";
 			};

@@ -18,19 +18,20 @@ enum SMLayerType {
 
 class SMChartView: UIView , UIGestureRecognizerDelegate {
 	var dataSource:SMChartDataSource?
-	lazy var width: CGFloat = {
+	var width: CGFloat {
 		return self.bounds.width
-	}()
-	lazy var height: CGFloat = {
+	}
+	var height: CGFloat {
 		return self.bounds.height
-	}()
+	}
 	
 	var contentRect:CGRect = CGRect(x: 0, y: 115, width: 8, height: 30) //test values
-	lazy var safeRect:CGRect = {
+	var safeRect:CGRect {
 		let dx = self.contentRect.width*0.1
 		let dy = self.contentRect.height*0.1
 		return self.contentRect.insetBy(dx: -dx, dy: -dy)
-	}()
+	}
+	
 	
 	override func draw(_ rect: CGRect) {
 		self.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
@@ -78,6 +79,8 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 					txtLayer.string = "\(y)"
 					txtLayer.frame = CGRect(x: 5, y: vY, width: 100, height: 50)
 					txtLayer.fontSize = 12
+					txtLayer.contentsScale = UIScreen.main.scale
+
 					txtLayer.foregroundColor = UIColor.black.cgColor
 					self.layer.addSublayer(txtLayer)
 				}
@@ -160,9 +163,10 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 	func setupGestureRecognizers() {
 		let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
 		let pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(_:)))
+		pan.delegate = self
+		pinch.delegate = self
 		self.addGestureRecognizer(pan)
 		self.addGestureRecognizer(pinch)
-		
 		self.isUserInteractionEnabled = true
 	}
 	
@@ -179,8 +183,6 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 	
 	@objc func handlePinch(_ sender:UIPinchGestureRecognizer) {
 		let scale = sender.scale
-		
-		
 		let dx = (scale-1)*contentRect.width
 		let dy = (scale-1)*contentRect.height
 		contentRect = contentRect.insetBy(dx: dx, dy: dy)
@@ -194,13 +196,17 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 	
 }
 
-func +(a:CGPoint, b:CGPoint) -> CGPoint {
-	return CGPoint(x: a.x+b.x, y: a.y+b.y)
-}
-
 
 protocol SMChartDataSource {
 	func layers() -> [SMLayerType]
 	func visibleData(rect:CGRect, layer:Int) -> [Any]
 	func gridLines(rect:CGRect) -> (horizontal:[CGFloat], vertical:[CGFloat])
+}
+
+
+
+//Helper methods
+
+func +(a:CGPoint, b:CGPoint) -> CGPoint {
+	return CGPoint(x: a.x+b.x, y: a.y+b.y)
 }

@@ -56,7 +56,7 @@ class ViewController: UIViewController, SMChartDataSource {
 	}
 	
 	func gridLines(rect: CGRect) -> (horizontal: [CGFloat], vertical: [CGFloat]) {
-		return (horizontal: [0,20,40,60,80,100,120], vertical:[])
+		return (horizontal: [0,25,40,65,80,100,120,140,160,180], vertical:[])
 	}
 	
 	
