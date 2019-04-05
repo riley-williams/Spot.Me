@@ -46,9 +46,9 @@ class ViewController: UIViewController, SMChartDataSource {
 		case .Dot:
 			return (layer as! SMDotLayer).data.filter { visibleRect.contains($0) }
 		case .Bar:
-			return (layer as! SMBarLayer).data.filter { visibleRect.contains(CGRect(origin: $0.origin, size: CGSize(width: 0, height: $0.height))) }
+			return (layer as! SMBarLayer).data.filter { $0.origin.x >= visibleRect.minX && $0.origin.x <= visibleRect.maxX }
 		case .Area:
-			return (layer as! SMAreaLayer).data.filter { visibleRect.contains(CGRect(origin: $0.origin, size: CGSize(width: 0, height: $0.height))) }
+			return (layer as! SMAreaLayer).data.filter { $0.origin.x >= visibleRect.minX && $0.origin.x <= visibleRect.maxX }
 		default:
 			assertionFailure("Chart type not implemented")
 		}

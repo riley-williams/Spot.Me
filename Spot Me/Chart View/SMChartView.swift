@@ -13,6 +13,7 @@ enum SMLayerType {
 	case Dot
 	case Bar
 	case Area
+	case BoxWhisker
 	case None
 }
 
@@ -53,6 +54,8 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 				case .Bar:
 					assertionFailure("Layer type not implemented")
 				case .Area:
+					assertionFailure("Layer type not implemented")
+				case .BoxWhisker:
 					assertionFailure("Layer type not implemented")
 				default:
 					assertionFailure("Layer type not implemented")
