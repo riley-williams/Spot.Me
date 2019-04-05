@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, SMChartDataSource {
+class ViewController: UIViewController, SMChartDataSource, SMHealthKitQueryDelegate {
 	
 	@IBOutlet weak var chartContainer: UIView!
 	@IBOutlet weak var chartView: SMChartView!
@@ -60,7 +60,9 @@ class ViewController: UIViewController, SMChartDataSource {
 	}
 	
 	
-	
+	func queryObtainedNewData() {
+		
+	}
 	
 }
 
