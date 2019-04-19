@@ -1,0 +1,975 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D29E2C5226576CF00E1296F /* ExerciseDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D29E2C4226576CF00E1296F /* ExerciseDescriptionViewController.swift */; };
+		2D8318772256D6DE00A2ECAC /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8318762256D6DE00A2ECAC /* HomePageViewController.swift */; };
+		2D8318792256D72600A2ECAC /* WorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8318782256D72600A2ECAC /* WorkoutsViewController.swift */; };
+		2D83187B2256D7A900A2ECAC /* WorkoutDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D83187A2256D7A900A2ECAC /* WorkoutDisplayViewController.swift */; };
+		2D83187F2256DEB000A2ECAC /* NutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D83187E2256DEB000A2ECAC /* NutritionViewController.swift */; };
+		2D8318812256E78000A2ECAC /* FitnessDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8318802256E78000A2ECAC /* FitnessDataViewController.swift */; };
+		2D90F1BF2267DAFC00B8CC24 /* SetsAndRepsCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90F1BE2267DAFC00B8CC24 /* SetsAndRepsCount.swift */; };
+		2DDF315E2257F4900005E3BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF315D2257F4900005E3BB /* User.swift */; };
+		BF5D34B62210C9B70000A5C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D34B52210C9B70000A5C4 /* AppDelegate.swift */; };
+		BF5D34B82210C9B80000A5C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D34B72210C9B80000A5C4 /* ViewController.swift */; };
+		BF5D34BB2210C9B80000A5C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5D34B92210C9B80000A5C4 /* Main.storyboard */; };
+		BF5D34BD2210C9BB0000A5C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5D34BC2210C9BB0000A5C4 /* Assets.xcassets */; };
+		BF5D34C02210C9BB0000A5C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5D34BE2210C9BB0000A5C4 /* LaunchScreen.storyboard */; };
+		BF5D34CB2210C9BB0000A5C4 /* Spot_MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D34CA2210C9BB0000A5C4 /* Spot_MeTests.swift */; };
+		BF5D34D62210C9BC0000A5C4 /* Spot_MeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D34D52210C9BC0000A5C4 /* Spot_MeUITests.swift */; };
+		BF5D34DB2210C9BC0000A5C4 /* Spot Me WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BF5D34DA2210C9BC0000A5C4 /* Spot Me WatchKit App.app */; };
+		BF5D34E12210C9BC0000A5C4 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5D34DF2210C9BC0000A5C4 /* Interface.storyboard */; };
+		BF5D34E32210C9BD0000A5C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5D34E22210C9BD0000A5C4 /* Assets.xcassets */; };
+		BF5D34EA2210C9BD0000A5C4 /* Spot Me WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BF5D34E92210C9BD0000A5C4 /* Spot Me WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BF5D34EF2210C9BD0000A5C4 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D34EE2210C9BD0000A5C4 /* InterfaceController.swift */; };
+		BF5D34F12210C9BD0000A5C4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D34F02210C9BD0000A5C4 /* ExtensionDelegate.swift */; };
+		BF5D34F32210C9BD0000A5C4 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D34F22210C9BD0000A5C4 /* NotificationController.swift */; };
+		BF5D34F52210C9BD0000A5C4 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D34F42210C9BD0000A5C4 /* ComplicationController.swift */; };
+		BF5D34F72210C9BE0000A5C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5D34F62210C9BE0000A5C4 /* Assets.xcassets */; };
+		BF5D350E2210CC760000A5C4 /* SMChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D350D2210CC760000A5C4 /* SMChartView.swift */; };
+		BF5D35122210D2F60000A5C4 /* SMLineLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D35112210D2F60000A5C4 /* SMLineLayer.swift */; };
+		BF5D35152210D3860000A5C4 /* SMBarLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D35142210D3860000A5C4 /* SMBarLayer.swift */; };
+		BF5D35172210D3AE0000A5C4 /* SMDotLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D35162210D3AE0000A5C4 /* SMDotLayer.swift */; };
+		BF5D351E2210E14B0000A5C4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5D351D2210E14B0000A5C4 /* HealthKit.framework */; };
+		BF5D3525221AC2600000A5C4 /* Agile Log.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF5D3524221AC2600000A5C4 /* Agile Log.plist */; };
+		BF8B0D7B224D74A2006A6982 /* SMLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8B0D7A224D74A2006A6982 /* SMLayer.swift */; };
+		BF8B0D7D224D76D4006A6982 /* SMAreaLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8B0D7C224D76D4006A6982 /* SMAreaLayer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF5D34C72210C9BB0000A5C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF5D34AA2210C9B70000A5C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF5D34B12210C9B70000A5C4;
+			remoteInfo = "Spot Me";
+		};
+		BF5D34D22210C9BC0000A5C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF5D34AA2210C9B70000A5C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF5D34B12210C9B70000A5C4;
+			remoteInfo = "Spot Me";
+		};
+		BF5D34DC2210C9BC0000A5C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF5D34AA2210C9B70000A5C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF5D34D92210C9BC0000A5C4;
+			remoteInfo = "Spot Me WatchKit App";
+		};
+		BF5D34EB2210C9BD0000A5C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF5D34AA2210C9B70000A5C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF5D34E82210C9BD0000A5C4;
+			remoteInfo = "Spot Me WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BF5D34FF2210C9BE0000A5C4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BF5D34EA2210C9BD0000A5C4 /* Spot Me WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5D35032210C9BE0000A5C4 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				BF5D34DB2210C9BC0000A5C4 /* Spot Me WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2D29E2C4226576CF00E1296F /* ExerciseDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDescriptionViewController.swift; sourceTree = "<group>"; };
+		2D8318762256D6DE00A2ECAC /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		2D8318782256D72600A2ECAC /* WorkoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsViewController.swift; sourceTree = "<group>"; };
+		2D83187A2256D7A900A2ECAC /* WorkoutDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDisplayViewController.swift; sourceTree = "<group>"; };
+		2D83187E2256DEB000A2ECAC /* NutritionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionViewController.swift; sourceTree = "<group>"; };
+		2D8318802256E78000A2ECAC /* FitnessDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessDataViewController.swift; sourceTree = "<group>"; };
+		2D90F1BE2267DAFC00B8CC24 /* SetsAndRepsCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsAndRepsCount.swift; sourceTree = "<group>"; };
+		2DDF315D2257F4900005E3BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BF5D34B22210C9B70000A5C4 /* Spot Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spot Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5D34B52210C9B70000A5C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF5D34B72210C9B80000A5C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF5D34BA2210C9B80000A5C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF5D34BC2210C9BB0000A5C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF5D34BF2210C9BB0000A5C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF5D34C12210C9BB0000A5C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF5D34C62210C9BB0000A5C4 /* Spot MeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spot MeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5D34CA2210C9BB0000A5C4 /* Spot_MeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot_MeTests.swift; sourceTree = "<group>"; };
+		BF5D34CC2210C9BB0000A5C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF5D34D12210C9BC0000A5C4 /* Spot MeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spot MeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5D34D52210C9BC0000A5C4 /* Spot_MeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot_MeUITests.swift; sourceTree = "<group>"; };
+		BF5D34D72210C9BC0000A5C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF5D34DA2210C9BC0000A5C4 /* Spot Me WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spot Me WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5D34E02210C9BC0000A5C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		BF5D34E22210C9BD0000A5C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF5D34E42210C9BD0000A5C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF5D34E92210C9BD0000A5C4 /* Spot Me WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Spot Me WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5D34EE2210C9BD0000A5C4 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		BF5D34F02210C9BD0000A5C4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		BF5D34F22210C9BD0000A5C4 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		BF5D34F42210C9BD0000A5C4 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		BF5D34F62210C9BE0000A5C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF5D34F82210C9BE0000A5C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF5D34F92210C9BE0000A5C4 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		BF5D350D2210CC760000A5C4 /* SMChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMChartView.swift; sourceTree = "<group>"; };
+		BF5D35112210D2F60000A5C4 /* SMLineLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMLineLayer.swift; sourceTree = "<group>"; };
+		BF5D35142210D3860000A5C4 /* SMBarLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMBarLayer.swift; sourceTree = "<group>"; };
+		BF5D35162210D3AE0000A5C4 /* SMDotLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMDotLayer.swift; sourceTree = "<group>"; };
+		BF5D351D2210E14B0000A5C4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		BF5D351F2210E14B0000A5C4 /* Spot Me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Spot Me.entitlements"; sourceTree = "<group>"; };
+		BF5D3524221AC2600000A5C4 /* Agile Log.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Agile Log.plist"; sourceTree = "<group>"; };
+		BF8B0D7A224D74A2006A6982 /* SMLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMLayer.swift; sourceTree = "<group>"; };
+		BF8B0D7C224D76D4006A6982 /* SMAreaLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMAreaLayer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF5D34AF2210C9B70000A5C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5D351E2210E14B0000A5C4 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5D34C32210C9BB0000A5C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5D34CE2210C9BC0000A5C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5D34E62210C9BD0000A5C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF5D34A92210C9B70000A5C4 = {
+			isa = PBXGroup;
+			children = (
+				BF5D3524221AC2600000A5C4 /* Agile Log.plist */,
+				BF5D34B42210C9B70000A5C4 /* Spot Me */,
+				BF5D34C92210C9BB0000A5C4 /* Spot MeTests */,
+				BF5D34D42210C9BC0000A5C4 /* Spot MeUITests */,
+				BF5D34DE2210C9BC0000A5C4 /* Spot Me WatchKit App */,
+				BF5D34ED2210C9BD0000A5C4 /* Spot Me WatchKit Extension */,
+				BF5D34B32210C9B70000A5C4 /* Products */,
+				BF5D351C2210E14B0000A5C4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BF5D34B32210C9B70000A5C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D34B22210C9B70000A5C4 /* Spot Me.app */,
+				BF5D34C62210C9BB0000A5C4 /* Spot MeTests.xctest */,
+				BF5D34D12210C9BC0000A5C4 /* Spot MeUITests.xctest */,
+				BF5D34DA2210C9BC0000A5C4 /* Spot Me WatchKit App.app */,
+				BF5D34E92210C9BD0000A5C4 /* Spot Me WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF5D34B42210C9B70000A5C4 /* Spot Me */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D351F2210E14B0000A5C4 /* Spot Me.entitlements */,
+				BF5D34B52210C9B70000A5C4 /* AppDelegate.swift */,
+				2D8318762256D6DE00A2ECAC /* HomePageViewController.swift */,
+				BF5D34B72210C9B80000A5C4 /* ViewController.swift */,
+				2D8318782256D72600A2ECAC /* WorkoutsViewController.swift */,
+				2D83187A2256D7A900A2ECAC /* WorkoutDisplayViewController.swift */,
+				2D29E2C4226576CF00E1296F /* ExerciseDescriptionViewController.swift */,
+				2D83187E2256DEB000A2ECAC /* NutritionViewController.swift */,
+				2D8318802256E78000A2ECAC /* FitnessDataViewController.swift */,
+				BF5D34B92210C9B80000A5C4 /* Main.storyboard */,
+				BF5D35132210D3010000A5C4 /* Chart View */,
+				BF8B0D7E224D7EA7006A6982 /* Layers */,
+				BF5D34BC2210C9BB0000A5C4 /* Assets.xcassets */,
+				BF5D34BE2210C9BB0000A5C4 /* LaunchScreen.storyboard */,
+				BF5D34C12210C9BB0000A5C4 /* Info.plist */,
+				2DDF315D2257F4900005E3BB /* User.swift */,
+				2D90F1BE2267DAFC00B8CC24 /* SetsAndRepsCount.swift */,
+			);
+			path = "Spot Me";
+			sourceTree = "<group>";
+		};
+		BF5D34C92210C9BB0000A5C4 /* Spot MeTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D34CA2210C9BB0000A5C4 /* Spot_MeTests.swift */,
+				BF5D34CC2210C9BB0000A5C4 /* Info.plist */,
+			);
+			path = "Spot MeTests";
+			sourceTree = "<group>";
+		};
+		BF5D34D42210C9BC0000A5C4 /* Spot MeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D34D52210C9BC0000A5C4 /* Spot_MeUITests.swift */,
+				BF5D34D72210C9BC0000A5C4 /* Info.plist */,
+			);
+			path = "Spot MeUITests";
+			sourceTree = "<group>";
+		};
+		BF5D34DE2210C9BC0000A5C4 /* Spot Me WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D34DF2210C9BC0000A5C4 /* Interface.storyboard */,
+				BF5D34E22210C9BD0000A5C4 /* Assets.xcassets */,
+				BF5D34E42210C9BD0000A5C4 /* Info.plist */,
+			);
+			path = "Spot Me WatchKit App";
+			sourceTree = "<group>";
+		};
+		BF5D34ED2210C9BD0000A5C4 /* Spot Me WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D34EE2210C9BD0000A5C4 /* InterfaceController.swift */,
+				BF5D34F02210C9BD0000A5C4 /* ExtensionDelegate.swift */,
+				BF5D34F22210C9BD0000A5C4 /* NotificationController.swift */,
+				BF5D34F42210C9BD0000A5C4 /* ComplicationController.swift */,
+				BF5D34F62210C9BE0000A5C4 /* Assets.xcassets */,
+				BF5D34F82210C9BE0000A5C4 /* Info.plist */,
+				BF5D34F92210C9BE0000A5C4 /* PushNotificationPayload.apns */,
+			);
+			path = "Spot Me WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		BF5D35132210D3010000A5C4 /* Chart View */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D350D2210CC760000A5C4 /* SMChartView.swift */,
+			);
+			path = "Chart View";
+			sourceTree = "<group>";
+		};
+		BF5D351C2210E14B0000A5C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF5D351D2210E14B0000A5C4 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF8B0D7E224D7EA7006A6982 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				BF8B0D7A224D74A2006A6982 /* SMLayer.swift */,
+				BF5D35112210D2F60000A5C4 /* SMLineLayer.swift */,
+				BF5D35162210D3AE0000A5C4 /* SMDotLayer.swift */,
+				BF5D35142210D3860000A5C4 /* SMBarLayer.swift */,
+				BF8B0D7C224D76D4006A6982 /* SMAreaLayer.swift */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF5D34B12210C9B70000A5C4 /* Spot Me */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF5D35042210C9BE0000A5C4 /* Build configuration list for PBXNativeTarget "Spot Me" */;
+			buildPhases = (
+				BF5D34AE2210C9B70000A5C4 /* Sources */,
+				BF5D34AF2210C9B70000A5C4 /* Frameworks */,
+				BF5D34B02210C9B70000A5C4 /* Resources */,
+				BF5D35032210C9BE0000A5C4 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF5D34DD2210C9BC0000A5C4 /* PBXTargetDependency */,
+			);
+			name = "Spot Me";
+			productName = "Spot Me";
+			productReference = BF5D34B22210C9B70000A5C4 /* Spot Me.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF5D34C52210C9BB0000A5C4 /* Spot MeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF5D35072210C9BE0000A5C4 /* Build configuration list for PBXNativeTarget "Spot MeTests" */;
+			buildPhases = (
+				BF5D34C22210C9BB0000A5C4 /* Sources */,
+				BF5D34C32210C9BB0000A5C4 /* Frameworks */,
+				BF5D34C42210C9BB0000A5C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF5D34C82210C9BB0000A5C4 /* PBXTargetDependency */,
+			);
+			name = "Spot MeTests";
+			productName = "Spot MeTests";
+			productReference = BF5D34C62210C9BB0000A5C4 /* Spot MeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BF5D34D02210C9BC0000A5C4 /* Spot MeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF5D350A2210C9BE0000A5C4 /* Build configuration list for PBXNativeTarget "Spot MeUITests" */;
+			buildPhases = (
+				BF5D34CD2210C9BC0000A5C4 /* Sources */,
+				BF5D34CE2210C9BC0000A5C4 /* Frameworks */,
+				BF5D34CF2210C9BC0000A5C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF5D34D32210C9BC0000A5C4 /* PBXTargetDependency */,
+			);
+			name = "Spot MeUITests";
+			productName = "Spot MeUITests";
+			productReference = BF5D34D12210C9BC0000A5C4 /* Spot MeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		BF5D34D92210C9BC0000A5C4 /* Spot Me WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF5D35002210C9BE0000A5C4 /* Build configuration list for PBXNativeTarget "Spot Me WatchKit App" */;
+			buildPhases = (
+				BF5D34D82210C9BC0000A5C4 /* Resources */,
+				BF5D34FF2210C9BE0000A5C4 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF5D34EC2210C9BD0000A5C4 /* PBXTargetDependency */,
+			);
+			name = "Spot Me WatchKit App";
+			productName = "Spot Me WatchKit App";
+			productReference = BF5D34DA2210C9BC0000A5C4 /* Spot Me WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		BF5D34E82210C9BD0000A5C4 /* Spot Me WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF5D34FC2210C9BE0000A5C4 /* Build configuration list for PBXNativeTarget "Spot Me WatchKit Extension" */;
+			buildPhases = (
+				BF5D34E52210C9BD0000A5C4 /* Sources */,
+				BF5D34E62210C9BD0000A5C4 /* Frameworks */,
+				BF5D34E72210C9BD0000A5C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Spot Me WatchKit Extension";
+			productName = "Spot Me WatchKit Extension";
+			productReference = BF5D34E92210C9BD0000A5C4 /* Spot Me WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF5D34AA2210C9B70000A5C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Riley Williams";
+				TargetAttributes = {
+					BF5D34B12210C9B70000A5C4 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
+					};
+					BF5D34C52210C9BB0000A5C4 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = BF5D34B12210C9B70000A5C4;
+					};
+					BF5D34D02210C9BC0000A5C4 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = BF5D34B12210C9B70000A5C4;
+					};
+					BF5D34D92210C9BC0000A5C4 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					BF5D34E82210C9BD0000A5C4 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = BF5D34AD2210C9B70000A5C4 /* Build configuration list for PBXProject "Spot Me" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF5D34A92210C9B70000A5C4;
+			productRefGroup = BF5D34B32210C9B70000A5C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF5D34B12210C9B70000A5C4 /* Spot Me */,
+				BF5D34C52210C9BB0000A5C4 /* Spot MeTests */,
+				BF5D34D02210C9BC0000A5C4 /* Spot MeUITests */,
+				BF5D34D92210C9BC0000A5C4 /* Spot Me WatchKit App */,
+				BF5D34E82210C9BD0000A5C4 /* Spot Me WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF5D34B02210C9B70000A5C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5D34C02210C9BB0000A5C4 /* LaunchScreen.storyboard in Resources */,
+				BF5D3525221AC2600000A5C4 /* Agile Log.plist in Resources */,
+				BF5D34BD2210C9BB0000A5C4 /* Assets.xcassets in Resources */,
+				BF5D34BB2210C9B80000A5C4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5D34C42210C9BB0000A5C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5D34CF2210C9BC0000A5C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5D34D82210C9BC0000A5C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5D34E32210C9BD0000A5C4 /* Assets.xcassets in Resources */,
+				BF5D34E12210C9BC0000A5C4 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5D34E72210C9BD0000A5C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5D34F72210C9BE0000A5C4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF5D34AE2210C9B70000A5C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF8B0D7D224D76D4006A6982 /* SMAreaLayer.swift in Sources */,
+				BF5D35152210D3860000A5C4 /* SMBarLayer.swift in Sources */,
+				2D8318772256D6DE00A2ECAC /* HomePageViewController.swift in Sources */,
+				2D83187F2256DEB000A2ECAC /* NutritionViewController.swift in Sources */,
+				BF5D35122210D2F60000A5C4 /* SMLineLayer.swift in Sources */,
+				2D90F1BF2267DAFC00B8CC24 /* SetsAndRepsCount.swift in Sources */,
+				BF5D34B82210C9B80000A5C4 /* ViewController.swift in Sources */,
+				2DDF315E2257F4900005E3BB /* User.swift in Sources */,
+				BF5D35172210D3AE0000A5C4 /* SMDotLayer.swift in Sources */,
+				2D8318792256D72600A2ECAC /* WorkoutsViewController.swift in Sources */,
+				2D8318812256E78000A2ECAC /* FitnessDataViewController.swift in Sources */,
+				BF5D34B62210C9B70000A5C4 /* AppDelegate.swift in Sources */,
+				2D29E2C5226576CF00E1296F /* ExerciseDescriptionViewController.swift in Sources */,
+				BF5D350E2210CC760000A5C4 /* SMChartView.swift in Sources */,
+				2D83187B2256D7A900A2ECAC /* WorkoutDisplayViewController.swift in Sources */,
+				BF8B0D7B224D74A2006A6982 /* SMLayer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5D34C22210C9BB0000A5C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5D34CB2210C9BB0000A5C4 /* Spot_MeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5D34CD2210C9BC0000A5C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5D34D62210C9BC0000A5C4 /* Spot_MeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5D34E52210C9BD0000A5C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5D34F32210C9BD0000A5C4 /* NotificationController.swift in Sources */,
+				BF5D34F52210C9BD0000A5C4 /* ComplicationController.swift in Sources */,
+				BF5D34F12210C9BD0000A5C4 /* ExtensionDelegate.swift in Sources */,
+				BF5D34EF2210C9BD0000A5C4 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF5D34C82210C9BB0000A5C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF5D34B12210C9B70000A5C4 /* Spot Me */;
+			targetProxy = BF5D34C72210C9BB0000A5C4 /* PBXContainerItemProxy */;
+		};
+		BF5D34D32210C9BC0000A5C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF5D34B12210C9B70000A5C4 /* Spot Me */;
+			targetProxy = BF5D34D22210C9BC0000A5C4 /* PBXContainerItemProxy */;
+		};
+		BF5D34DD2210C9BC0000A5C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF5D34D92210C9BC0000A5C4 /* Spot Me WatchKit App */;
+			targetProxy = BF5D34DC2210C9BC0000A5C4 /* PBXContainerItemProxy */;
+		};
+		BF5D34EC2210C9BD0000A5C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF5D34E82210C9BD0000A5C4 /* Spot Me WatchKit Extension */;
+			targetProxy = BF5D34EB2210C9BD0000A5C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF5D34B92210C9B80000A5C4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF5D34BA2210C9B80000A5C4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF5D34BE2210C9BB0000A5C4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF5D34BF2210C9BB0000A5C4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BF5D34DF2210C9BC0000A5C4 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF5D34E02210C9BC0000A5C4 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF5D34FA2210C9BE0000A5C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BF5D34FB2210C9BE0000A5C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF5D34FD2210C9BE0000A5C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BD5L3C9JKH;
+				INFOPLIST_FILE = "Spot Me WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-Me.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		BF5D34FE2210C9BE0000A5C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BD5L3C9JKH;
+				INFOPLIST_FILE = "Spot Me WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-Me.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
+		BF5D35012210C9BE0000A5C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BD5L3C9JKH;
+				IBSC_MODULE = Spot_Me_WatchKit_Extension;
+				INFOPLIST_FILE = "Spot Me WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-Me.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		BF5D35022210C9BE0000A5C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BD5L3C9JKH;
+				IBSC_MODULE = Spot_Me_WatchKit_Extension;
+				INFOPLIST_FILE = "Spot Me WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-Me.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
+		BF5D35052210C9BE0000A5C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Spot Me/Spot Me.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BD5L3C9JKH;
+				INFOPLIST_FILE = "Spot Me/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-Me";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF5D35062210C9BE0000A5C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Spot Me/Spot Me.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BD5L3C9JKH;
+				INFOPLIST_FILE = "Spot Me/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-Me";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BF5D35082210C9BE0000A5C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BD5L3C9JKH;
+				INFOPLIST_FILE = "Spot MeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-MeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spot Me.app/Spot Me";
+			};
+			name = Debug;
+		};
+		BF5D35092210C9BE0000A5C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BD5L3C9JKH;
+				INFOPLIST_FILE = "Spot MeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-MeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spot Me.app/Spot Me";
+			};
+			name = Release;
+		};
+		BF5D350B2210C9BE0000A5C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BD5L3C9JKH;
+				INFOPLIST_FILE = "Spot MeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-MeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Spot Me";
+			};
+			name = Debug;
+		};
+		BF5D350C2210C9BE0000A5C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BD5L3C9JKH;
+				INFOPLIST_FILE = "Spot MeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riley-williams.Spot-MeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Spot Me";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF5D34AD2210C9B70000A5C4 /* Build configuration list for PBXProject "Spot Me" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5D34FA2210C9BE0000A5C4 /* Debug */,
+				BF5D34FB2210C9BE0000A5C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF5D34FC2210C9BE0000A5C4 /* Build configuration list for PBXNativeTarget "Spot Me WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5D34FD2210C9BE0000A5C4 /* Debug */,
+				BF5D34FE2210C9BE0000A5C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF5D35002210C9BE0000A5C4 /* Build configuration list for PBXNativeTarget "Spot Me WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5D35012210C9BE0000A5C4 /* Debug */,
+				BF5D35022210C9BE0000A5C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF5D35042210C9BE0000A5C4 /* Build configuration list for PBXNativeTarget "Spot Me" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5D35052210C9BE0000A5C4 /* Debug */,
+				BF5D35062210C9BE0000A5C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF5D35072210C9BE0000A5C4 /* Build configuration list for PBXNativeTarget "Spot MeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5D35082210C9BE0000A5C4 /* Debug */,
+				BF5D35092210C9BE0000A5C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF5D350A2210C9BE0000A5C4 /* Build configuration list for PBXNativeTarget "Spot MeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5D350B2210C9BE0000A5C4 /* Debug */,
+				BF5D350C2210C9BE0000A5C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF5D34AA2210C9B70000A5C4 /* Project object */;
+}

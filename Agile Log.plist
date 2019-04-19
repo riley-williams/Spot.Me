@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Armond Berry</key>
+	<array/>
+	<key>Liam Byrne</key>
+	<array/>
+	<key>Luke Deviney</key>
+	<dict/>
+	<key>Jonathan Evans</key>
+	<dict/>
+	<key>Nicholas Vincent</key>
+	<dict/>
+	<key>Riley Williams</key>
+	<dict>
+		<key>Chart stuff</key>
+		<dict>
+			<key>Story Card</key>
+			<integer>0</integer>
+			<key>Start Date</key>
+			<date>2019-03-28T08:30:10Z</date>
+			<key>End Date</key>
+			<date>2019-03-29T00:52:03Z</date>
+		</dict>
+		<key>User Interface Prototyping</key>
+		<dict>
+			<key>Story Card</key>
+			<integer>0</integer>
+			<key>Start Date</key>
+			<date>2019-02-22T23:00:17Z</date>
+			<key>End Date</key>
+			<date>2019-02-23T00:19:24Z</date>
+		</dict>
+		<key>Chart API First Run</key>
+		<dict>
+			<key>Story Card</key>
+			<integer>0</integer>
+			<key>Start Date</key>
+			<date>2019-02-18T09:14:41Z</date>
+			<key>End Date</key>
+			<date>2019-02-18T12:23:10Z</date>
+		</dict>
+	</dict>
+</dict>
+</plist>
