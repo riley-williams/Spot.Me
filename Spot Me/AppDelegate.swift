@@ -27,11 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.data = data
     }
     
-    private var workoutData : SetsAndRepsCount?
-    func getUserWorkoutData() -> SetsAndRepsCount? {
+    private var workoutData : WorkoutInfo?
+    func getUserWorkoutData() -> WorkoutInfo? {
         return workoutData
     }
-    func passUserWorkoutData(_ data : SetsAndRepsCount?) {
+    func passUserWorkoutData(_ data : WorkoutInfo?) {
         self.workoutData = data
     }
     

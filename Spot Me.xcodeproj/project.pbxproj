@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D10A044226A498400770330 /* GeneralExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D10A043226A498400770330 /* GeneralExerciseViewController.swift */; };
 		2D29E2C5226576CF00E1296F /* ExerciseDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D29E2C4226576CF00E1296F /* ExerciseDescriptionViewController.swift */; };
 		2D8318772256D6DE00A2ECAC /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8318762256D6DE00A2ECAC /* HomePageViewController.swift */; };
 		2D8318792256D72600A2ECAC /* WorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8318782256D72600A2ECAC /* WorkoutsViewController.swift */; };
 		2D83187B2256D7A900A2ECAC /* WorkoutDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D83187A2256D7A900A2ECAC /* WorkoutDisplayViewController.swift */; };
 		2D83187F2256DEB000A2ECAC /* NutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D83187E2256DEB000A2ECAC /* NutritionViewController.swift */; };
 		2D8318812256E78000A2ECAC /* FitnessDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8318802256E78000A2ECAC /* FitnessDataViewController.swift */; };
-		2D90F1BF2267DAFC00B8CC24 /* SetsAndRepsCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90F1BE2267DAFC00B8CC24 /* SetsAndRepsCount.swift */; };
+		2D90F1BF2267DAFC00B8CC24 /* WorkoutInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90F1BE2267DAFC00B8CC24 /* WorkoutInfo.swift */; };
+		2D9C309C226989090003E3ED /* TimedExerciseDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C309B226989090003E3ED /* TimedExerciseDescriptionViewController.swift */; };
+		2DA882FE2270B70E004E2D0E /* LiftObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA882FD2270B70E004E2D0E /* LiftObject.swift */; };
+		2DA883002270BBF4004E2D0E /* WorkoutHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA882FF2270BBF4004E2D0E /* WorkoutHistory.swift */; };
+		2DA883022270BED1004E2D0E /* ExerciseArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA883012270BED1004E2D0E /* ExerciseArray.swift */; };
+		2DCD00D5226EAC4100F94EF7 /* JumpingExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCD00D4226EAC4100F94EF7 /* JumpingExerciseViewController.swift */; };
 		2DDF315E2257F4900005E3BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF315D2257F4900005E3BB /* User.swift */; };
 		BF5D34B62210C9B70000A5C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D34B52210C9B70000A5C4 /* AppDelegate.swift */; };
 		BF5D34B82210C9B80000A5C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D34B72210C9B80000A5C4 /* ViewController.swift */; };
@@ -98,13 +104,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D10A043226A498400770330 /* GeneralExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralExerciseViewController.swift; sourceTree = "<group>"; };
 		2D29E2C4226576CF00E1296F /* ExerciseDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDescriptionViewController.swift; sourceTree = "<group>"; };
 		2D8318762256D6DE00A2ECAC /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		2D8318782256D72600A2ECAC /* WorkoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsViewController.swift; sourceTree = "<group>"; };
 		2D83187A2256D7A900A2ECAC /* WorkoutDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDisplayViewController.swift; sourceTree = "<group>"; };
 		2D83187E2256DEB000A2ECAC /* NutritionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionViewController.swift; sourceTree = "<group>"; };
 		2D8318802256E78000A2ECAC /* FitnessDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessDataViewController.swift; sourceTree = "<group>"; };
-		2D90F1BE2267DAFC00B8CC24 /* SetsAndRepsCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsAndRepsCount.swift; sourceTree = "<group>"; };
+		2D90F1BE2267DAFC00B8CC24 /* WorkoutInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInfo.swift; sourceTree = "<group>"; };
+		2D9C309B226989090003E3ED /* TimedExerciseDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedExerciseDescriptionViewController.swift; sourceTree = "<group>"; };
+		2DA882FD2270B70E004E2D0E /* LiftObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftObject.swift; sourceTree = "<group>"; };
+		2DA882FF2270BBF4004E2D0E /* WorkoutHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutHistory.swift; sourceTree = "<group>"; };
+		2DA883012270BED1004E2D0E /* ExerciseArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseArray.swift; sourceTree = "<group>"; };
+		2DCD00D4226EAC4100F94EF7 /* JumpingExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpingExerciseViewController.swift; sourceTree = "<group>"; };
 		2DDF315D2257F4900005E3BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BF5D34B22210C9B70000A5C4 /* Spot Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spot Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5D34B52210C9B70000A5C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +223,9 @@
 				2D8318782256D72600A2ECAC /* WorkoutsViewController.swift */,
 				2D83187A2256D7A900A2ECAC /* WorkoutDisplayViewController.swift */,
 				2D29E2C4226576CF00E1296F /* ExerciseDescriptionViewController.swift */,
+				2D9C309B226989090003E3ED /* TimedExerciseDescriptionViewController.swift */,
+				2DCD00D4226EAC4100F94EF7 /* JumpingExerciseViewController.swift */,
+				2D10A043226A498400770330 /* GeneralExerciseViewController.swift */,
 				2D83187E2256DEB000A2ECAC /* NutritionViewController.swift */,
 				2D8318802256E78000A2ECAC /* FitnessDataViewController.swift */,
 				BF5D34B92210C9B80000A5C4 /* Main.storyboard */,
@@ -220,7 +235,10 @@
 				BF5D34BE2210C9BB0000A5C4 /* LaunchScreen.storyboard */,
 				BF5D34C12210C9BB0000A5C4 /* Info.plist */,
 				2DDF315D2257F4900005E3BB /* User.swift */,
-				2D90F1BE2267DAFC00B8CC24 /* SetsAndRepsCount.swift */,
+				2D90F1BE2267DAFC00B8CC24 /* WorkoutInfo.swift */,
+				2DA882FD2270B70E004E2D0E /* LiftObject.swift */,
+				2DA882FF2270BBF4004E2D0E /* WorkoutHistory.swift */,
+				2DA883012270BED1004E2D0E /* ExerciseArray.swift */,
 			);
 			path = "Spot Me";
 			sourceTree = "<group>";
@@ -493,17 +511,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA883002270BBF4004E2D0E /* WorkoutHistory.swift in Sources */,
 				BF8B0D7D224D76D4006A6982 /* SMAreaLayer.swift in Sources */,
 				BF5D35152210D3860000A5C4 /* SMBarLayer.swift in Sources */,
 				2D8318772256D6DE00A2ECAC /* HomePageViewController.swift in Sources */,
 				2D83187F2256DEB000A2ECAC /* NutritionViewController.swift in Sources */,
 				BF5D35122210D2F60000A5C4 /* SMLineLayer.swift in Sources */,
-				2D90F1BF2267DAFC00B8CC24 /* SetsAndRepsCount.swift in Sources */,
+				2DA882FE2270B70E004E2D0E /* LiftObject.swift in Sources */,
+				2D90F1BF2267DAFC00B8CC24 /* WorkoutInfo.swift in Sources */,
+				2D10A044226A498400770330 /* GeneralExerciseViewController.swift in Sources */,
+				2DA883022270BED1004E2D0E /* ExerciseArray.swift in Sources */,
 				BF5D34B82210C9B80000A5C4 /* ViewController.swift in Sources */,
 				2DDF315E2257F4900005E3BB /* User.swift in Sources */,
 				BF5D35172210D3AE0000A5C4 /* SMDotLayer.swift in Sources */,
+				2DCD00D5226EAC4100F94EF7 /* JumpingExerciseViewController.swift in Sources */,
 				2D8318792256D72600A2ECAC /* WorkoutsViewController.swift in Sources */,
 				2D8318812256E78000A2ECAC /* FitnessDataViewController.swift in Sources */,
+				2D9C309C226989090003E3ED /* TimedExerciseDescriptionViewController.swift in Sources */,
 				BF5D34B62210C9B70000A5C4 /* AppDelegate.swift in Sources */,
 				2D29E2C5226576CF00E1296F /* ExerciseDescriptionViewController.swift in Sources */,
 				BF5D350E2210CC760000A5C4 /* SMChartView.swift in Sources */,

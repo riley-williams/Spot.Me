@@ -13,7 +13,7 @@ class WorkoutsViewController: UIViewController {
     let positions = [
         "Baseball":["Infield", "Outfield", "Pitcher", "Catcher"],
         "Basketball":["Point Guard", "Shooting Guard", "Forward", "Center"],
-        "Football":[ "Quarterback", "Running Back", "Wide Reciever", "Tight End", "Offensive Line", "Cornerback", "Free Saftey", "Linbacker", "Defensive Line"],
+        "Football":[ "Quarterback", "Running Back", "Wide Reciever", "Tight End", "Offensive Line", "Cornerback", "Free Safety", "Linebacker", "Defensive Line"],
         "Soccer":["Striker", "Midfield", "Defense", "Goalie"]
     ]
     
