@@ -12,16 +12,18 @@ class LiftObject{
     
     var date: Date?
     var workoutLevel: String?
+    var workoutType: String?
     var exercise: String?
     var sets: Int?
     var reps: Int?
     var weight: Int?
     var complete = false
     
-    init(date: Date, workoutLevel: String, exercise: String, sets: Int, reps: Int, weight: Int, complete: Bool){
+    init(date: Date, workoutLevel: String, workoutType: String, exercise: String, sets: Int, reps: Int, weight: Int, complete: Bool){
         
         self.date = date
         self.workoutLevel = workoutLevel
+        self.workoutType = workoutType
         self.exercise = exercise
         self.sets = sets
         self.reps = reps

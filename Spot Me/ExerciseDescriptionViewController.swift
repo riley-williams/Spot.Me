@@ -49,6 +49,7 @@ class ExerciseDescriptionViewController: UIViewController {
     var exerciseWeight = 0
     let date = Date.init()
     var history = [LiftObject]()
+    var workoutType: String?
     
    
 
@@ -1417,7 +1418,7 @@ class ExerciseDescriptionViewController: UIViewController {
             exerciseSets = Int(SetsTextField.text!)!
             exerciseReps = Int(RepsTextField.text!)!
             exerciseWeight = Int(weightTextField.text!)!
-            let thisLift = LiftObject(date: date, workoutLevel: workoutLevel!, exercise: exercise, sets:exerciseSets , reps: exerciseReps, weight: exerciseWeight, complete: true)
+            let thisLift = LiftObject(date: date, workoutLevel: workoutLevel!, workoutType: workoutType!, exercise: exercise, sets:exerciseSets , reps: exerciseReps, weight: exerciseWeight, complete: true)
             
             history.append(thisLift)
             
@@ -1436,6 +1437,8 @@ class ExerciseDescriptionViewController: UIViewController {
             destinationVC.sportName = sportName
             destinationVC.positionName = positionName
             destinationVC.history = history
+            destinationVC.lift = thisLift
+            destinationVC.thisExercise = exercise
         }
     }
     

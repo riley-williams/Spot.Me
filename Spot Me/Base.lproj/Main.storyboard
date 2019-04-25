@@ -1422,9 +1422,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-combo-chart-64" width="64" height="64"/>
-        <image name="icons8-deadlift-64" width="64" height="64"/>
-        <image name="icons8-profile-64" width="64" height="64"/>
-        <image name="icons8-tableware-64" width="64" height="64"/>
+        <image name="icons8-combo-chart-64" width="48" height="48"/>
+        <image name="icons8-deadlift-64" width="48" height="48"/>
+        <image name="icons8-profile-64" width="48" height="48"/>
+        <image name="icons8-tableware-64" width="48" height="48"/>
     </resources>
 </document>

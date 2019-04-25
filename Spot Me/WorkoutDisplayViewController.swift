@@ -16,8 +16,10 @@ class WorkoutDisplayViewController: UIViewController {
     var positionName: String?
     var workoutType = "legDay"
     var workoutLevel = "Beginner"
-    
+    var thisExercise: String?
+    let userHistory = WorkoutHistory()
     var history = [LiftObject]()
+    var strings = [String]()
     
     
     
@@ -151,6 +153,7 @@ class WorkoutDisplayViewController: UIViewController {
         
         self.sportLabel.text = "\(sportName!): "
         self.positionLabel.text = positionName
+        
         
         
         
@@ -476,6 +479,7 @@ class WorkoutDisplayViewController: UIViewController {
            destinationVC.positionName = positionName
            destinationVC.workoutLevel = workoutLevel
            destinationVC.history = history
+           destinationVC.workoutType = workoutType
           
         }
         
@@ -521,12 +525,15 @@ class WorkoutDisplayViewController: UIViewController {
         // control for the workout type selection
         
         if sender.selectedSegmentIndex == 0{
+            history.removeAll()
             workoutType = "legDay"
         }
         else if sender.selectedSegmentIndex == 1{
+            history.removeAll()
             workoutType = "upper"
         }
         else if sender.selectedSegmentIndex == 2{
+            history.removeAll()
             workoutType = "agility"
         }
         tableView.reloadData()
@@ -538,12 +545,15 @@ class WorkoutDisplayViewController: UIViewController {
         //control for the workout level selection
         
         if sender.selectedSegmentIndex == 0{
+            history.removeAll()
             workoutLevel = "Beginner"
         }
         else if sender.selectedSegmentIndex == 1{
+            history.removeAll()
             workoutLevel = "Intermediate"
         }
         else if sender.selectedSegmentIndex == 2{
+            history.removeAll()
             workoutLevel = "Advanced"
         }
         tableView.reloadData()
@@ -552,6 +562,12 @@ class WorkoutDisplayViewController: UIViewController {
 }
 
 extension WorkoutDisplayViewController: UITableViewDataSource{
+    
+    
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var numberOfRows = 1
         
@@ -606,6 +622,8 @@ extension WorkoutDisplayViewController: UITableViewDataSource{
         // sets number of rows in the table view
         return numberOfRows
     }
+    
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -1761,19 +1779,34 @@ extension WorkoutDisplayViewController: UITableViewDataSource{
         // if not specified return no text label
         else{setsAndRepsLabel.text = ""}
         
-        for i in 0..<history.count {
-            if (history[i].exercise == exercise && history[i].workoutLevel == workoutLevel && history[i].complete == true){
-                cell.contentView.backgroundColor = UIColor.green
-            }
+        
+        if history.count == 0{
+            cell.contentView.backgroundColor = UIColor.white
         }
+        else{
+            for i in 0..<history.count{
+                if history[i].exercise == cell.textLabel!.text{
+                    cell.contentView.backgroundColor = UIColor(displayP3Red: 0, green: 255/255, blue: 15/255, alpha: 0.2)
+                    print(history[i].exercise!)
+                }
+            }
+            
+        }
+        
+        
         
         return cell
     }
     
     
+    
 }
 
 extension WorkoutDisplayViewController: UITableViewDelegate{
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // When a user clicks on an exercise this block will decide which view the user will see
@@ -1798,4 +1831,10 @@ extension WorkoutDisplayViewController: UITableViewDelegate{
         }
         print(selectedWorkout[workoutType]![indexPath.row] + " is selected")
     }
+    
+    
+       
+    
+    
+    
 }
