@@ -34,7 +34,9 @@ class ExerciseDescriptionViewController: UIViewController {
     
     
     
+    
     var userWorkout: WorkoutInfo?
+    var thisLift: LiftObject?
     var exercise = "default"
     var sportName: String?
     var positionName: String?
@@ -45,6 +47,10 @@ class ExerciseDescriptionViewController: UIViewController {
     var exerciseSets = 0
     var exerciseReps = 0
     var exerciseWeight = 0
+    let date = Date.init()
+    var history = [LiftObject]()
+    
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -1411,8 +1417,25 @@ class ExerciseDescriptionViewController: UIViewController {
             exerciseSets = Int(SetsTextField.text!)!
             exerciseReps = Int(RepsTextField.text!)!
             exerciseWeight = Int(weightTextField.text!)!
-            let thisLift = LiftObject(workoutLevel: workoutLevel!, exercise: exercise, sets:exerciseSets , reps: exerciseReps, weight: exerciseWeight, complete: true)
+            let thisLift = LiftObject(date: date, workoutLevel: workoutLevel!, exercise: exercise, sets:exerciseSets , reps: exerciseReps, weight: exerciseWeight, complete: true)
             
+            history.append(thisLift)
+            
+            
+            
+            let userHistory = WorkoutHistory()
+            userHistory.history = history
+            
+            for i in 0..<userHistory.history.count{
+                print("Today's date is: \(userHistory.history[i].date!)")
+                print("The Exercise is:\(userHistory.history[i].exercise!)")
+                print("The Weight is:\(userHistory.history[i].weight!)")
+            }
+            
+            let destinationVC = segue.destination as! WorkoutDisplayViewController
+            destinationVC.sportName = sportName
+            destinationVC.positionName = positionName
+            destinationVC.history = history
         }
     }
     

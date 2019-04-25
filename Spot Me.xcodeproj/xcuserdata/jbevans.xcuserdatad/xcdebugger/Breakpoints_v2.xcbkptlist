@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Spot Me/WorkoutDisplayViewController.swift"
-            timestampString = "577695466.6162421"
+            timestampString = "577843519.202876"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "basketballSG"
             landmarkType = "24">
             <Locations>
@@ -73,11 +73,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Spot Me/WorkoutDisplayViewController.swift"
-            timestampString = "577695466.616653"
+            timestampString = "577843519.2029231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "WorkoutDisplayViewController"
             landmarkType = "3">
          </BreakpointContent>

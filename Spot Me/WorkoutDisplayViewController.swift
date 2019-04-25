@@ -10,12 +10,14 @@ import UIKit
 
 class WorkoutDisplayViewController: UIViewController {
     
-    
+    var lift: LiftObject?
     var userWorkout: WorkoutInfo?
     var sportName: String?
     var positionName: String?
     var workoutType = "legDay"
     var workoutLevel = "Beginner"
+    
+    var history = [LiftObject]()
     
     
     
@@ -69,19 +71,20 @@ class WorkoutDisplayViewController: UIViewController {
                     "agility": ["5-10-5", "Batting Practice", "Lateral Shuffle", "Catching Fly Balls", "Lateral Crossovers", "Stagger Sprints", "Fast Hands Drill", "High Knees Run", "Back Up First", "Weave The Cones", "Box Jumps", "Picking Off Runners", "Get Behind It Drill", "Power Hitting"]]
     
     let footballQB = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift"],
-                    "upper": [],
-                    "agility": ["5-10-5"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Split Squat", "Dumbbell Step-Ups", "Dumbbell Calf Raises", "Hamstring Curls", "Lunges", "One Legged Squats", "Box Jumps", "Stationary Bike",],
+        "upper": ["Bench Press", "Overhead Press", "Tricep Extensions", "Bicep Curls", "Pullups", "Six Inches", "Arnold Press", "Upright Rows", "Lat Pulls", "Planks", "Dumbbell Press", "Shrugs", "Forearm Twists", "Dips"],
+        "agility": ["5-10-5" , "Stagger Sprints", "Lateral Shuffle", "Crossing Target", "Over The Shoulder", "Lateral Crossovers", "High Knees Run", "Through The Hoop", "Checkdown Drill", ]]
     
     let footballRB = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift"],
-                    "upper": [],
-                    "agility": ["5-10-5"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Lunges", "Hamstring Curls", "Dumbbell Step-Ups", "Dumbbell Calf Raises", "Split Squat", "Deep Side Lunges", "Walking Lunges", "Box Jumps", "One Legged Squats"],
+        "upper": ["Bench Press", "Bicep Curls", "Tricep Extensions", "Six Inches", "Pullups", "Upright Rows", "Planks", "Forearm Twists", "Side Planks", "Arnold Press", "Dumbbell Press", "Shrugs", "Leg Raise", "Dips"],
+        "agility": ["5-10-5", "Vertical Leaps", "Stagger Sprints", "Stop And Sprint", "High Knees Run", "Lateral Shuffle", "Weave The Cones", "Standing Long Jumps", "Juke Sprint Spint", "40 Yard Dash", "Rip And Grip", "Bag Run", "Bag Weave", "Jump Cut Drill"]]
     
     let footballWR = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift"],
-                    "upper": [],
-                    "agility": ["5-10-5"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Lunges", "Hamstring Curls", "Dumbbell Step-Ups", "Dumbbell Calf Raises", "Split Squat", "Deep Side Lunges", "Walking Lunges", "Box Jumps", "Stationary Bike"],
+        "upper": [],
+        "agility": ["5-10-5", "Vertical Leaps", "Stagger Sprints", "Stop And Sprint", "Over The Shoulder", "High Knees Run", "Lateral Shuffle", "Weave The Cones", "Standing Long Jumps", "Curl Drill", "Crossing Drill", ]]
+    
     
     let footballTE = [
                     "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift"],
@@ -468,6 +471,7 @@ class WorkoutDisplayViewController: UIViewController {
            destinationVC.sportName = sportName
            destinationVC.positionName = positionName
            destinationVC.workoutLevel = workoutLevel
+           destinationVC.history = history
           
         }
         
@@ -1775,7 +1779,7 @@ extension WorkoutDisplayViewController: UITableViewDelegate{
             performSegue(withIdentifier: "ToJumpingExercisesDescription", sender: (Any).self)
         }
             
-        else if (selectedWorkout[workoutType]![indexPath.row] == "Six Inches" || selectedWorkout[workoutType]![indexPath.row] == "Stationary Bike" || selectedWorkout[workoutType]![indexPath.row] == "40 Yard Dash" || selectedWorkout[workoutType]![indexPath.row] == "Stagger Sprints" || selectedWorkout[workoutType]![indexPath.row] == "Planks" || selectedWorkout[workoutType]![indexPath.row] == "Side Planks" || selectedWorkout[workoutType]![indexPath.row] == "Run"){
+        else if (selectedWorkout[workoutType]![indexPath.row] == "Six Inches" || selectedWorkout[workoutType]![indexPath.row] == "Stationary Bike" || selectedWorkout[workoutType]![indexPath.row] == "40 Yard Dash" || selectedWorkout[workoutType]![indexPath.row] == "Stagger Sprints" || selectedWorkout[workoutType]![indexPath.row] == "Planks" || selectedWorkout[workoutType]![indexPath.row] == "Side Planks" || selectedWorkout[workoutType]![indexPath.row] == "Run" || selectedWorkout[workoutType]![indexPath.row] == "5-10-5"){
             performSegue(withIdentifier: "ToTimedExercisesDescription", sender: (Any).self)
         }
             

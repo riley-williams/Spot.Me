@@ -11,17 +11,9 @@ import Foundation
 
 class WorkoutHistory{
     
-    var exerciseInfo: ExerciseArray?
     
-    var date: Date?
- 
-    var workoutHistoryArray = [Date:[ExerciseArray]].self
+    var history = [LiftObject]()
     
     
     
-    init(exerciseInformation: ExerciseArray, Thisdate: Date, workoutArray: [String:[LiftObject]]){
-        self.exerciseInfo = exerciseInformation
-        date = Date.init()
-        
-    }
 }

@@ -10,6 +10,7 @@ import Foundation
 
 class LiftObject{
     
+    var date: Date?
     var workoutLevel: String?
     var exercise: String?
     var sets: Int?
@@ -17,8 +18,9 @@ class LiftObject{
     var weight: Int?
     var complete = false
     
-    init(workoutLevel: String, exercise: String, sets: Int, reps: Int, weight: Int, complete: Bool){
+    init(date: Date, workoutLevel: String, exercise: String, sets: Int, reps: Int, weight: Int, complete: Bool){
         
+        self.date = date
         self.workoutLevel = workoutLevel
         self.exercise = exercise
         self.sets = sets

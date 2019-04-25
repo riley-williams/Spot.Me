@@ -18,7 +18,6 @@
 		2D9C309C226989090003E3ED /* TimedExerciseDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C309B226989090003E3ED /* TimedExerciseDescriptionViewController.swift */; };
 		2DA882FE2270B70E004E2D0E /* LiftObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA882FD2270B70E004E2D0E /* LiftObject.swift */; };
 		2DA883002270BBF4004E2D0E /* WorkoutHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA882FF2270BBF4004E2D0E /* WorkoutHistory.swift */; };
-		2DA883022270BED1004E2D0E /* ExerciseArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA883012270BED1004E2D0E /* ExerciseArray.swift */; };
 		2DCD00D5226EAC4100F94EF7 /* JumpingExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCD00D4226EAC4100F94EF7 /* JumpingExerciseViewController.swift */; };
 		2DDF315E2257F4900005E3BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF315D2257F4900005E3BB /* User.swift */; };
 		BF5D34B62210C9B70000A5C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D34B52210C9B70000A5C4 /* AppDelegate.swift */; };
@@ -115,7 +114,6 @@
 		2D9C309B226989090003E3ED /* TimedExerciseDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedExerciseDescriptionViewController.swift; sourceTree = "<group>"; };
 		2DA882FD2270B70E004E2D0E /* LiftObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftObject.swift; sourceTree = "<group>"; };
 		2DA882FF2270BBF4004E2D0E /* WorkoutHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutHistory.swift; sourceTree = "<group>"; };
-		2DA883012270BED1004E2D0E /* ExerciseArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseArray.swift; sourceTree = "<group>"; };
 		2DCD00D4226EAC4100F94EF7 /* JumpingExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpingExerciseViewController.swift; sourceTree = "<group>"; };
 		2DDF315D2257F4900005E3BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BF5D34B22210C9B70000A5C4 /* Spot Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spot Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,7 +236,6 @@
 				2D90F1BE2267DAFC00B8CC24 /* WorkoutInfo.swift */,
 				2DA882FD2270B70E004E2D0E /* LiftObject.swift */,
 				2DA882FF2270BBF4004E2D0E /* WorkoutHistory.swift */,
-				2DA883012270BED1004E2D0E /* ExerciseArray.swift */,
 			);
 			path = "Spot Me";
 			sourceTree = "<group>";
@@ -520,7 +517,6 @@
 				2DA882FE2270B70E004E2D0E /* LiftObject.swift in Sources */,
 				2D90F1BF2267DAFC00B8CC24 /* WorkoutInfo.swift in Sources */,
 				2D10A044226A498400770330 /* GeneralExerciseViewController.swift in Sources */,
-				2DA883022270BED1004E2D0E /* ExerciseArray.swift in Sources */,
 				BF5D34B82210C9B80000A5C4 /* ViewController.swift in Sources */,
 				2DDF315E2257F4900005E3BB /* User.swift in Sources */,
 				BF5D35172210D3AE0000A5C4 /* SMDotLayer.swift in Sources */,
