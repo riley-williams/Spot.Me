@@ -152,6 +152,8 @@ class WorkoutDisplayViewController: UIViewController {
         self.sportLabel.text = "\(sportName!): "
         self.positionLabel.text = positionName
         
+        
+        
         // Large if else block will check which sport and position has been selected and will load that workout into the into the array of the selected workout
         // Later we will display whichever workout has been selected
         if (sportName == "Basketball" && positionName == "Center"){
@@ -451,6 +453,8 @@ class WorkoutDisplayViewController: UIViewController {
             
         else {}
         workouts.append(contentsOf: selectedWorkout.keys)
+        
+        
         
     }
     
@@ -1757,6 +1761,11 @@ extension WorkoutDisplayViewController: UITableViewDataSource{
         // if not specified return no text label
         else{setsAndRepsLabel.text = ""}
         
+        for i in 0..<history.count {
+            if (history[i].exercise == exercise && history[i].workoutLevel == workoutLevel && history[i].complete == true){
+                cell.contentView.backgroundColor = UIColor.green
+            }
+        }
         
         return cell
     }
