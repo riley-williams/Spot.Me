@@ -20,6 +20,9 @@ class SMHealthKitQuery {
 	
 	var data: [SMDataPoint] = []
 	
+	private var queryComplete = true
+	private var newerQuery:(startDate:Date, endDate:Date)?
+	
 	init(_ metric: HKQuantityTypeIdentifier, anchor: Date, interval: DateComponents, options: HKStatisticsOptions, delegate: SMHealthKitQueryDelegate) {
 		self.metric = metric
 		self.anchor = anchor
@@ -28,8 +31,14 @@ class SMHealthKitQuery {
 		self.delegate = delegate
 	}
 	
-	func executeQuery() {
-		
+	func executeQuery(fromDate startDate:Date, toDate endDate:Date) {
+		//save the newer query for later if one is already in progress
+		if queryComplete == false {
+			newerQuery = (startDate:startDate, endDate:endDate)
+			return
+		}
+		queryComplete = false
+
 		guard let quantityType = HKObjectType.quantityType(forIdentifier: metric) else {
 			fatalError("*** Unable to create a step count type ***")
 		}
@@ -37,7 +46,7 @@ class SMHealthKitQuery {
 		// Create the query
 		let query = HKStatisticsCollectionQuery(quantityType: quantityType,
 												quantitySamplePredicate: nil,
-												options: .cumulativeSum,
+												options: options,
 												anchorDate: anchor,
 												intervalComponents: interval)
 		
@@ -46,26 +55,29 @@ class SMHealthKitQuery {
 			
 			guard let statsCollection = results else {
 				// Perform proper error handling here
-				fatalError("*** An error occurred while calculating the statistics: \(String(describing: error?.localizedDescription)) ***")
+				return
+				//fatalError("*** An error occurred while calculating the statistics: \(String(describing: error?.localizedDescription)) ***")
 			}
-			
-			let endDate = Date()
-			
-			guard let startDate = Calendar.current.date(byAdding: .month, value: -3, to: endDate) else {
-				fatalError("*** Unable to calculate the start date ***")
-			}
-			
+			self.data = []
 			// Plot the weekly step counts over the past 3 months
 			statsCollection.enumerateStatistics(from: startDate, to: endDate) { [unowned self] statistics, stop in
 				
-				if let quantity = statistics.sumQuantity() {
+				if let quantity = statistics.averageQuantity() {
 					let date = statistics.startDate
-					let value = Float(quantity.doubleValue(for: self.unit))
+					//let value = Float(quantity.doubleValue(for: self.unit))
+					let value = Float(quantity.doubleValue(for: HKUnit.init(from: "count/s")))*60
 					self.data.append(SMDataPoint(value: value, date: date))
 				}
 			}
 			
 			self.delegate.queryObtainedNewData()
+			
+			//'unlock' query function and refresh with the newest query executed
+			self.queryComplete = true
+			if let nq = self.newerQuery {
+				self.newerQuery = nil
+				self.executeQuery(fromDate: nq.startDate, toDate: nq.endDate)
+			}
 		}
 		
 		HKHealthStore().execute(query)

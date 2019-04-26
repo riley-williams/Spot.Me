@@ -18,5 +18,9 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>For displaying charts</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>For easily changing data</string>
 </dict>
 </plist>

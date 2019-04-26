@@ -161,6 +161,13 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 	}
 	
 	
+
+	
+	func autoMajorInterval() -> TimeInterval {
+		let interval: CGFloat = pow(12,CGFloat(Int(log(contentRect.width)/log(12)))-1)
+		return TimeInterval(interval)
+	}
+	
 	func drawLineChart(data: [CGPoint]) {
 		if data.count > 1 {
 			let path = UIBezierPath()
