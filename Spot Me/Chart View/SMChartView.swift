@@ -60,6 +60,8 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 					assertionFailure("Layer type not implemented")
 				}
 			}
+			
+			drawXLabels()
 		}
 		
 	}
@@ -72,19 +74,8 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 		
 		let minorHorizontalLines:[CGFloat] = computeMinorHorizontalLines()
 		let majorHorizontalLines:[CGFloat] = computeMajorHorizontalLines()
-		let minorVerticalLines:[CGFloat] = []
-		let majorVerticalLines:[CGFloat] = []
-		
 		
 		UIColor.lightGray.setStroke()
-		
-		if minorVerticalLines.count > 0 {
-			for x in minorVerticalLines {
-				let vX = CtoVx(x)
-				path.move(to: CGPoint(x: vX, y: 0))
-				path.addLine(to: CGPoint(x: vX, y: height))
-			}
-		}
 		
 		if minorHorizontalLines.count > 0 {
 			for y in minorHorizontalLines {
@@ -95,6 +86,7 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 		}
 		
 		path.stroke()
+		
 		
 		path = UIBezierPath()
 		UIColor.darkGray.setStroke()
@@ -108,23 +100,6 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 				let txtLayer = CATextLayer()
 				txtLayer.string = "\(Int(y))"
 				txtLayer.frame = CGRect(x: 5, y: vY, width: 100, height: 50)
-				txtLayer.fontSize = 12
-				txtLayer.contentsScale = UIScreen.main.scale
-				txtLayer.foregroundColor = UIColor.black.cgColor
-				self.layer.addSublayer(txtLayer)
-			}
-		}
-		
-		
-		if majorVerticalLines.count > 0 {
-			for x in majorVerticalLines {
-				let vX = CtoVx(x)
-				path.move(to: CGPoint(x: vX, y: 50))
-				path.addLine(to: CGPoint(x: vX, y: height))
-				
-				let txtLayer = CATextLayer()
-				txtLayer.string = "\(x)"
-				txtLayer.frame = CGRect(x: vX, y: 50, width: 100, height: 50)
 				txtLayer.fontSize = 12
 				txtLayer.contentsScale = UIScreen.main.scale
 				txtLayer.foregroundColor = UIColor.black.cgColor
@@ -160,12 +135,56 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 		return lines
 	}
 	
-	
-
-	
 	func autoMajorInterval() -> TimeInterval {
 		let interval: CGFloat = pow(12,CGFloat(Int(log(contentRect.width)/log(12)))-1)
 		return TimeInterval(interval)
+	}
+	
+	func autoInterval() -> DateComponents {
+		let components = [
+			DateComponents(year: nil, month: nil, day: nil, hour: nil, minute: nil, second: 1),
+			DateComponents(year: nil, month: nil, day: nil, hour: nil, minute: nil, second: 15),
+			DateComponents(year: nil, month: nil, day: nil, hour: nil, minute: nil, second: 30),
+			DateComponents(year: nil, month: nil, day: nil, hour: nil, minute: 1, second: nil),
+			DateComponents(year: nil, month: nil, day: nil, hour: nil, minute: 10, second: nil),
+			DateComponents(year: nil, month: nil, day: nil, hour: nil, minute: 30, second: nil),
+			DateComponents(year: nil, month: nil, day: nil, hour: 1, minute: nil, second: nil),
+			DateComponents(year: nil, month: nil, day: nil, hour: 6, minute: nil, second: nil),
+			DateComponents(year: nil, month: nil, day: nil, hour: 12, minute: nil, second: nil),
+			DateComponents(year: nil, month: nil, day: 1, hour: nil, minute: nil, second: nil),
+			DateComponents(year: nil, month: nil, day: 7, hour: nil, minute: nil, second: nil),
+			DateComponents(year: nil, month: 1, day: nil, hour: nil, minute: nil, second: nil),
+			DateComponents(year: 1, month: nil, day: nil, hour: nil, minute: nil, second: nil),
+			DateComponents(year: 5, month: nil, day: nil, hour: nil, minute: nil, second: nil)
+		]
+		
+		var i = 0
+		while Double(components[i].toInterval()) < Double(contentRect.width/100) && i < components.count-1 {
+			i += 1
+		}
+		
+		return components[i]
+	}
+	
+	
+	func drawXLabels() {
+		let months = "JFMAMJJASOND"
+		/*
+		let x:[CGFloat] = [] //DELETE ME
+		for x in majorVerticalLines {
+			let vX = CtoVx(x)
+			path.move(to: CGPoint(x: vX, y: 50))
+			path.addLine(to: CGPoint(x: vX, y: height))
+			
+			let txtLayer = CATextLayer()
+			txtLayer.string = "\(x)"
+			txtLayer.frame = CGRect(x: vX, y: 50, width: 100, height: 50)
+			txtLayer.fontSize = 12
+			txtLayer.contentsScale = UIScreen.main.scale
+			txtLayer.foregroundColor = UIColor.black.cgColor
+			self.layer.addSublayer(txtLayer)
+		}
+		*/
 	}
 	
 	func drawLineChart(data: [CGPoint]) {

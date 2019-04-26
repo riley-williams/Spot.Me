@@ -43,8 +43,7 @@ class ViewController: UIViewController, SMChartDataSource, SMHealthKitQueryDeleg
 		
 		HKHealthStore().requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
 			if success {
-				var dc = DateComponents()
-				dc.hour = 1
+				let dc = DateComponents(hour: 1)
 				self.hrQuery = SMHealthKitQuery(HKQuantityTypeIdentifier.heartRate, anchor: Date(), interval: dc, options: .discreteAverage, delegate: self)
 				
 				self.hrQuery?.executeQuery(fromDate: Date(timeIntervalSinceReferenceDate: TimeInterval(self.chartView.contentRect.minX)), toDate: Date(timeIntervalSinceReferenceDate: TimeInterval(self.chartView.contentRect.maxX)))
@@ -99,6 +98,7 @@ class ViewController: UIViewController, SMChartDataSource, SMHealthKitQueryDeleg
 	
 	func viewDidChange() {
 		self.hrQuery?.executeQuery(fromDate: Date(timeIntervalSinceReferenceDate: TimeInterval(self.chartView.contentRect.minX)), toDate: Date(timeIntervalSinceReferenceDate: TimeInterval(self.chartView.contentRect.maxX)))
+		self.hrQuery?.interval = chartView.autoInterval()
 	}
 }
 

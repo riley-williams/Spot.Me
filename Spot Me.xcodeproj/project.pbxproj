@@ -32,6 +32,7 @@
 		BF8B0D7B224D74A2006A6982 /* SMLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8B0D7A224D74A2006A6982 /* SMLayer.swift */; };
 		BF8B0D7D224D76D4006A6982 /* SMAreaLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8B0D7C224D76D4006A6982 /* SMAreaLayer.swift */; };
 		BF9212A02256E70500F4C410 /* SMHealthKitQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF92129F2256E70500F4C410 /* SMHealthKitQuery.swift */; };
+		BFEEEB6C22734BDB003D56CA /* DateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEEB6B22734BDB003D56CA /* DateComponents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		BF8B0D7A224D74A2006A6982 /* SMLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMLayer.swift; sourceTree = "<group>"; };
 		BF8B0D7C224D76D4006A6982 /* SMAreaLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMAreaLayer.swift; sourceTree = "<group>"; };
 		BF92129F2256E70500F4C410 /* SMHealthKitQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMHealthKitQuery.swift; sourceTree = "<group>"; };
+		BFEEEB6B22734BDB003D56CA /* DateComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateComponents.swift; path = "Spot Me/DateComponents.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 				BF92129F2256E70500F4C410 /* SMHealthKitQuery.swift */,
 				BF5D35132210D3010000A5C4 /* Chart View */,
 				BF8B0D7E224D7EA7006A6982 /* Layers */,
+				BFEEEB6B22734BDB003D56CA /* DateComponents.swift */,
 				BF5D34B92210C9B80000A5C4 /* Main.storyboard */,
 				BF5D34BC2210C9BB0000A5C4 /* Assets.xcassets */,
 				BF5D34BE2210C9BB0000A5C4 /* LaunchScreen.storyboard */,
@@ -479,6 +482,7 @@
 				BF8B0D7D224D76D4006A6982 /* SMAreaLayer.swift in Sources */,
 				BF5D35152210D3860000A5C4 /* SMBarLayer.swift in Sources */,
 				BF5D35122210D2F60000A5C4 /* SMLineLayer.swift in Sources */,
+				BFEEEB6C22734BDB003D56CA /* DateComponents.swift in Sources */,
 				BF9212A02256E70500F4C410 /* SMHealthKitQuery.swift in Sources */,
 				BF5D34B82210C9B80000A5C4 /* ViewController.swift in Sources */,
 				BF5D35172210D3AE0000A5C4 /* SMDotLayer.swift in Sources */,
