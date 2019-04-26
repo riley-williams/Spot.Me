@@ -19,7 +19,17 @@ class WorkoutDisplayViewController: UIViewController {
     var thisExercise: String?
     let userHistory = WorkoutHistory()
     var history = [LiftObject]()
+    var legHistory = [LiftObject]()
+    var legHistoryInt = [LiftObject]()
+    var legHistoryAdv = [LiftObject]()
+    var upperHistory = [LiftObject]()
+    var upperHistoryInt = [LiftObject]()
+    var upperHistoryAdv = [LiftObject]()
+    var agilityHistory = [LiftObject]()
+    var agilityHistoryInt = [LiftObject]()
+    var agilityHistoryAdv = [LiftObject]()
     var strings = [String]()
+    var workouts = [String]()
     
     
     
@@ -33,44 +43,44 @@ class WorkoutDisplayViewController: UIViewController {
     // Key value arrays which hold the exercises for each position
     
     let basketballCenter = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Vertical Leaps", "Step-Ups", "Walking Lunges", "Calf Raises", "Stationary Bike", "Full Court Lunges", "Hamstring Curls", "Split Squat", "Deep Side Lunges", "Dumbbell Step-Ups"],
-                    "upper": ["Bench Press", "Overhead Press", "Dumbbell Press", "Pullups", "Tricep Extensions", "Bicep Curls", "Planks", "Inclined Bench Press", "Military Press", "Air Bicycle", "Six Inches", "Preacher Curls", "Upright Rows", "Dips"],
-                    "agility": ["5-10-5", "Stagger Sprints",  "Make Free Throws", "Box Jumps", "Weak Handed Layups", "Dream Shake Drill", "Lateral Shuffle", "Lateral Crossovers", "Spot Shooting", "Mikan Drill", "High Knees Run", "Tip Drill", "Drop Step Slides", "3 Point Shooting"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Vertical Leaps", "Step-Ups", "Walking Lunges", "Calf Raises", "Stationary Bike", "Full Court Lunges", "Hamstring Curls", "Split Squat", "Deep Side Lunges", "Dumbbell Step-Ups"],
+        "upper": ["Bench Press", "Overhead Press", "Dumbbell Press", "Pullups", "Tricep Extensions", "Bicep Curls", "Planks", "Inclined Bench Press", "Military Press", "Air Bicycle", "Six Inches", "Preacher Curls", "Upright Rows", "Dips"],
+        "agility": ["5-10-5", "Stagger Sprints",  "Make Free Throws", "Box Jumps", "Weak Handed Layups", "Dream Shake Drill", "Lateral Shuffle", "Lateral Crossovers", "Spot Shooting", "Mikan Drill", "High Knees Run", "Tip Drill", "Drop Step Slides", "3 Point Shooting"]]
     
     let basketballPG = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Lunges", "Step-Ups", "Hamstring Curls", "Calf Raises", "Reverse Lunges", "One Legged Squats", "Deep Side Lunges", "Split Squat", "Stationary Bike" ],
-                    "upper": ["Bench Press", "Overhead Press", "Dumbbell Press", "Tricep Extensions", "Planks", "Bicep Curls", "Arnold Press", "Inclined Bench Press", "Six Inches", "Preacher Curls", "Military Press", "Side Lateral Raise", "Forearm Twists", "Dips"],
-                    "agility": ["5-10-5", "Make Free Throws", "Stagger Sprints", "Box Jumps", "Sicssor Dribble",  "Vertical Leaps", "Standing Long Jumps", "Weak Handed Layups", "Dribble With Weak Hand", "Reggie Miller Step Back Drill", "Jordan's Turn And Fade Away Drill", "Lateral Shuffle", "Lateral Crossovers", "Spider Dribble"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Lunges", "Step-Ups", "Hamstring Curls", "Calf Raises", "Reverse Lunges", "One Legged Squats", "Deep Side Lunges", "Split Squat", "Stationary Bike" ],
+        "upper": ["Bench Press", "Overhead Press", "Dumbbell Press", "Tricep Extensions", "Planks", "Bicep Curls", "Arnold Press", "Inclined Bench Press", "Six Inches", "Preacher Curls", "Military Press", "Side Lateral Raise", "Forearm Twists", "Dips"],
+        "agility": ["5-10-5", "Make Free Throws", "Stagger Sprints", "Box Jumps", "Sicssor Dribble",  "Vertical Leaps", "Standing Long Jumps", "Weak Handed Layups", "Dribble With Weak Hand", "Reggie Miller Step Back Drill", "Jordan's Turn And Fade Away Drill", "Lateral Shuffle", "Lateral Crossovers", "Spider Dribble"]]
     
     let basketballSG = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Hamstring Curls", "One Legged Squats", "Lunges", "Calf Raises", "Split Squat", "Full Court Lunges", "One Legged Squats", "Dumbbell Step-Ups", "Stationary Bike"],
-                    "upper": ["Bench Press", "Overhead Press", "Dumbbell Press", "Tricep Extensions", "Six Inches", "Bicep Curls", "Inclined Bench Press", "Kickbacks", "Planks", "Preacher Curls", "Forearm Twists", "Military Press", "Arnold Press", "Dips"],
-                    "agility": ["5-10-5", "Spot Shooting Drill", "Stagger Sprints", "Reggie Miller Step Back Drill", "Weak Handed layups", "3 Point Shooting", "Vertical Leaps", "Spot Shooting", "Box Jumps", "Reverse Layups", "Make Free Throws", "Lateral Shuffle", "Lateral Crossovers", "Jordan's Turn And Fade Away Drill" ]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Hamstring Curls", "One Legged Squats", "Lunges", "Calf Raises", "Split Squat", "Full Court Lunges", "One Legged Squats", "Dumbbell Step-Ups", "Stationary Bike"],
+        "upper": ["Bench Press", "Overhead Press", "Dumbbell Press", "Tricep Extensions", "Six Inches", "Bicep Curls", "Inclined Bench Press", "Kickbacks", "Planks", "Preacher Curls", "Forearm Twists", "Military Press", "Arnold Press", "Dips"],
+        "agility": ["5-10-5", "Spot Shooting Drill", "Stagger Sprints", "Reggie Miller Step Back Drill", "Weak Handed layups", "3 Point Shooting", "Vertical Leaps", "Spot Shooting", "Box Jumps", "Reverse Layups", "Make Free Throws", "Lateral Shuffle", "Lateral Crossovers", "Jordan's Turn And Fade Away Drill" ]]
     
     let basketballForward = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Stagger Sprints", "Lunges", "Dumbbell Step-Ups", "Hamstring Curls", "Full Court Lunges", "Reverse Lunges", "Split Squat", "Calf Raises", "Stationary Bike"],
-                    "upper": ["Bench Press", "Overhead Press", "Dumbbell Press", "Planks", "Bicep Curls", "Tricep Extensions", "Arnold Press", "Pullups", "Six Inches", "Inclined Bench Press", "Upright Rows", "Preacher Curls", "Military Press", "Forearm Twists"],
-                    "agility": ["5-10-5", "Box Jumps", "Make Free Throws", "Vertical Leaps", "Spot Shooting", "Lateral Shuffle","Weak Handed Layups", "Lateral Crossovers", "Mikan Drill", "Drop Step Slides", "Dream Shake Drill", "High Knees Run", "Tip Drill", "3 Point Shooting"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Stagger Sprints", "Lunges", "Dumbbell Step-Ups", "Hamstring Curls", "Full Court Lunges", "Reverse Lunges", "Split Squat", "Calf Raises", "Stationary Bike"],
+        "upper": ["Bench Press", "Overhead Press", "Dumbbell Press", "Planks", "Bicep Curls", "Tricep Extensions", "Arnold Press", "Pullups", "Six Inches", "Inclined Bench Press", "Upright Rows", "Preacher Curls", "Military Press", "Forearm Twists"],
+        "agility": ["5-10-5", "Box Jumps", "Make Free Throws", "Vertical Leaps", "Spot Shooting", "Lateral Shuffle","Weak Handed Layups", "Lateral Crossovers", "Mikan Drill", "Drop Step Slides", "Dream Shake Drill", "High Knees Run", "Tip Drill", "3 Point Shooting"]]
     
     let baseballInfield = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Lunges", "Dumbbell Step-Ups", "Calf Raises", "Split Squat", "Hamstring Curls", "Dumbbell Step-Ups", "Stationary Bike", "Box Jumps", "Deep Side Lunges"],
-                    "upper": ["Bench Press", "Tricep Extensions", "Bicep Curls", "Six Inches", "Overhead Press", "Dumbbell Press", "Forearm Twists", "Military Press", "Pullups", "Side Planks", "Preacher Curls", "Upright Rows", "Side Lateral Raise", "Inclined Bench Press"],
-                    "agility": ["5-10-5", "Batting Practice", "Lateral Shuffle", "Lateral Crossovers", "Stagger Sprints", "High Knees Run", "Ladder Drill", "Triple Threat Drill", "Positioning Drill", "Stealing Second", "Box Jumps", "Weave The Cones", "Round The Bases", "Third to First"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Lunges", "Dumbbell Step-Ups", "Calf Raises", "Split Squat", "Hamstring Curls", "Dumbbell Step-Ups", "Stationary Bike", "Box Jumps", "Deep Side Lunges"],
+        "upper": ["Bench Press", "Tricep Extensions", "Bicep Curls", "Six Inches", "Overhead Press", "Dumbbell Press", "Forearm Twists", "Military Press", "Pullups", "Side Planks", "Preacher Curls", "Upright Rows", "Side Lateral Raise", "Inclined Bench Press"],
+        "agility": ["5-10-5", "Batting Practice", "Lateral Shuffle", "Lateral Crossovers", "Stagger Sprints", "High Knees Run", "Ladder Drill", "Triple Threat Drill", "Positioning Drill", "Stealing Second", "Box Jumps", "Weave The Cones", "Round The Bases", "Third to First"]]
     
     let baseballOutfield = [
-                    "legDay": ["Stretch", "Calf Raises", "Squat", "Hang Clean", "Deadlift", "Leg Press", "Step-Ups", "Dumbbell Calf Raises", "Split Squat", "Stationary Bike", "Deep Side Lunges", "Lunges", "Dumbbell Step-Ups", "One Legged Squats"],
-                    "upper": ["Bench Press", "Tricep Extensions", "Bicep Curls", "Six Inches", "Side Planks", "Military Press", "Dumbbell Press", "Upright Rows", "Lat Pulls", "Side Planks", "Preacher Curls", "Upright Rows", "Inclined Bench Press", "Dips" ],
-                    "agility": ["5-10-5", "Batting Practice", "Lateral Shuffle", "Lateral Crossovers", "Stagger Sprints", "High Knees Run", "Hit The Cut-Off", "Catching Fly Balls", "Weave The Cones", "Box Jumps", "Throwing Home", "Stealing Second", "Round The Bases", "Power Hitting"]]
+        "legDay": ["Stretch", "Calf Raises", "Squat", "Hang Clean", "Deadlift", "Leg Press", "Step-Ups", "Dumbbell Calf Raises", "Split Squat", "Stationary Bike", "Deep Side Lunges", "Lunges", "Dumbbell Step-Ups", "One Legged Squats"],
+        "upper": ["Bench Press", "Tricep Extensions", "Bicep Curls", "Six Inches", "Side Planks", "Military Press", "Dumbbell Press", "Upright Rows", "Lat Pulls", "Side Planks", "Preacher Curls", "Upright Rows", "Inclined Bench Press", "Dips" ],
+        "agility": ["5-10-5", "Batting Practice", "Lateral Shuffle", "Lateral Crossovers", "Stagger Sprints", "High Knees Run", "Hit The Cut-Off", "Catching Fly Balls", "Weave The Cones", "Box Jumps", "Throwing Home", "Stealing Second", "Round The Bases", "Power Hitting"]]
     
     let baseballPitcher = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Calf Raises", "Deadlift", "Hang Clean", "Lunges", "Box Jumps", "Dumbbell Step-Ups", "Dumbbell Calf Raises", "Stationary Bike", "Split Squat", "Deep Side Lunges", "One Legged Squats"],
-                    "upper": ["Bench Press", "Tricep Extensions", "Bicep Curls", "Six Inches", "Overhead Press", "Upright Rows", "Forearm Twists", "Shrugs", "Planks", "Pullups", "Military Press", "Lat Pulls", "Dips", "Arnold Press"],
-                    "agility": ["5-10-5", "Batting Practice"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Calf Raises", "Deadlift", "Hang Clean", "Lunges", "Box Jumps", "Dumbbell Step-Ups", "Dumbbell Calf Raises", "Stationary Bike", "Split Squat", "Deep Side Lunges", "One Legged Squats"],
+        "upper": ["Bench Press", "Tricep Extensions", "Bicep Curls", "Six Inches", "Overhead Press", "Upright Rows", "Forearm Twists", "Shrugs", "Planks", "Pullups", "Military Press", "Lat Pulls", "Dips", "Arnold Press"],
+        "agility": ["5-10-5", "Batting Practice"]]
     
     let baseballCatcher = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Calf Raises", "Walking Lunges", "Hamstring Curls", "Split Squat", "Deep Side Lunges", "Dumbbell Calf Raises", "One Legged Squats", "Dumbbell Step-Ups", "Stationary Bike"],
-                    "upper": ["Bench Press", "Bicep Curls", "Six Inches", "Tricep Extensions", "Shrugs", "Arnold Press", "Dumbbell Press", "Overhead Press", "Lat Pulls", "Leg Raise", "Military Press", "Preacher Curls", "Planks", "Inclined Bench Press"],
-                    "agility": ["5-10-5", "Batting Practice", "Lateral Shuffle", "Catching Fly Balls", "Lateral Crossovers", "Stagger Sprints", "Fast Hands Drill", "High Knees Run", "Back Up First", "Weave The Cones", "Box Jumps", "Picking Off Runners", "Get Behind It Drill", "Power Hitting"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Calf Raises", "Walking Lunges", "Hamstring Curls", "Split Squat", "Deep Side Lunges", "Dumbbell Calf Raises", "One Legged Squats", "Dumbbell Step-Ups", "Stationary Bike"],
+        "upper": ["Bench Press", "Bicep Curls", "Six Inches", "Tricep Extensions", "Shrugs", "Arnold Press", "Dumbbell Press", "Overhead Press", "Lat Pulls", "Leg Raise", "Military Press", "Preacher Curls", "Planks", "Inclined Bench Press"],
+        "agility": ["5-10-5", "Batting Practice", "Lateral Shuffle", "Catching Fly Balls", "Lateral Crossovers", "Stagger Sprints", "Fast Hands Drill", "High Knees Run", "Back Up First", "Weave The Cones", "Box Jumps", "Picking Off Runners", "Get Behind It Drill", "Power Hitting"]]
     
     let footballQB = [
         "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Split Squat", "Dumbbell Step-Ups", "Dumbbell Calf Raises", "Hamstring Curls", "Lunges", "One Legged Squats", "Box Jumps", "Stationary Bike",],
@@ -84,64 +94,63 @@ class WorkoutDisplayViewController: UIViewController {
     
     let footballWR = [
         "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Lunges", "Hamstring Curls", "Dumbbell Step-Ups", "Dumbbell Calf Raises", "Split Squat", "Deep Side Lunges", "Walking Lunges", "Box Jumps", "Stationary Bike"],
-        "upper": [],
-        "agility": ["5-10-5", "Vertical Leaps", "Stagger Sprints", "Stop And Sprint", "Over The Shoulder", "High Knees Run", "Lateral Shuffle", "Weave The Cones", "Standing Long Jumps", "Curl Drill", "Crossing Drill", ]]
-    
+        "upper": ["Bench Press", "Bicep Curls", "Tricep Extensions", "Six Inches", "Pullups", "Upright Rows", "Planks", "Forearm Twists", "Side Planks", "Arnold Press", "Dumbbell Press", "Shrugs", "Leg Raise", "Dips"],
+        "agility": ["5-10-5", "Vertical Leaps", "Stagger Sprints", "Stop And Sprint", "Over The Shoulder", "40 Yard Dash", "High Knees Run", "Lateral Shuffle", "Weave The Cones", "Standing Long Jumps", "Curl Drill", "Crossing Drill", "Hitch And Go", "One Handed Catches"]]
     
     let footballTE = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift"],
-                    "upper": [],
-                    "agility": ["5-10-5"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Lunges", "Dumbbell Step-Ups", "Calf Raises", "Split Squat", "Hamstring Curls", "Dumbbell Step-Ups", "Stationary Bike", "Box Jumps", "Deep Side Lunges"],
+        "upper": ["Bench Press", "Bicep Curls", "Tricep Extensions", "Six Inches", "Pullups", "Upright Rows", "Planks", "Forearm Twists", "Preacher Curls", "Arnold Press", "Dumbbell Press", "Shrugs", "Leg Raise", "Dips"],
+        "agility": ["5-10-5", "Vertical Leaps", "Stagger Sprints", "Stop And Sprint", "40 Yard Dash", "High Knees Run", "Lateral Shuffle", "Push The Sled", "Weave The Cones", "Standing Long Jumps", "Curl Drill", "Crossing Drill", "Block And Go", "Streak"]]
     
     let footballOL = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift"],
-                    "upper": [],
-                    "agility": ["5-10-5"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Lunges", "Dumbbell Step-Ups", "Hamstring Curls", " Dumbbell Calf Raises", "Reverse Lunges", "Hamstring Curls", "Deep Side Lunges", "Split Squat", "Stationary Bike"],
+        "upper": ["Bench Press", "Bicep Curls", "Tricep Extensions", "Upright Rows", "Planks", "Forearm Twists", "Arnold Press", "Dumbbell Press", "Shrugs", "Side Planks", "Preacher Curls", "Lat Pulls","Inclined Bench Press", "Six Inches"],
+        "agility": ["5-10-5" , "Stagger Sprints", "Lateral Shuffle", "High Knees Run"]]
     
     let footballFS = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift"],
-                    "upper": [],
-                    "agility": ["5-10-5"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Lunges", "Hamstring Curls", "Dumbbell Step-Ups", "Dumbbell Calf Raises", "Split Squat", "Deep Side Lunges", "Walking Lunges", "Box Jumps", "Stationary Bike"],
+        "upper": ["Bench Press", "Bicep Curls", "Tricep Extensions", "Six Inches", "Pullups", "Upright Rows", "Planks", "Forearm Twists", "Side Planks", "Arnold Press", "Dumbbell Press", "Shrugs", "Leg Raise", "Dips"],
+        "agility": ["5-10-5", "Vertical Leaps", "Stagger Sprints", "Stop And Sprint", "40 Yard Dash", "High Knees Run", "Lateral Shuffle", "Weave The Cones", "4 Directions Drill", "Follow The Leader", "Pick Drill", "Hail Mary Drill", "Backpedal And Turn", "Staggerd Cones Drill"]]
     
     let footballCB = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift"],
-                    "upper": [],
-                    "agility": ["5-10-5"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Lunges", "Hamstring Curls", "Dumbbell Step-Ups", "Dumbbell Calf Raises", "Split Squat", "Deep Side Lunges", "Walking Lunges", "Box Jumps", "Stationary Bike"],
+        "upper": ["Bench Press", "Bicep Curls", "Tricep Extensions", "Six Inches", "Pullups", "Upright Rows", "Planks", "Forearm Twists", "Side Planks", "Arnold Press", "Dumbbell Press", "Shrugs", "Leg Raise", "Dips"],
+        "agility": ["5-10-5", "Vertical Leaps", "Stagger Sprints", "Stop And Sprint", "40 Yard Dash", "High Knees Run", "Lateral Shuffle", "Weave The Cones", "4 Directions Drill", "Follow The Leader", "Pick Drill", "Hail Mary Drill", "Backpedal And Turn", "Staggerd Cones Drill"]]
     
     let footballLB = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift"],
-                    "upper": [],
-                    "agility": ["5-10-5"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Lunges", "Hamstring Curls", "Dumbbell Step-Ups", "Dumbbell Calf Raises", "Split Squat", "Deep Side Lunges", "Walking Lunges", "Box Jumps", "Stationary Bike"],
+        "upper": ["Bench Press", "Overhead Press", "Tricep Extensions", "Bicep Curls", "Pullups", "Six Inches", "Arnold Press", "Upright Rows", "Lat Pulls", "Planks", "Shrugs", "Forearm Twists", "Dumbbell Press", "Dips"],
+        "agility": ["5-10-5"]]
     
     let footballDL = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift"],
-                    "upper": [],
-                    "agility": ["5-10-5"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Lunges", "Dumbbell Step-Ups", "Hamstring Curls", " Dumbbell Calf Raises", "Reverse Lunges", "Hamstring Curls", "Deep Side Lunges", "Split Squat", "Stationary Bike"],
+        "upper": ["Bench Press", "Bicep Curls", "Tricep Extensions", "Upright Rows", "Planks", "Forearm Twists", "Arnold Press", "Dumbbell Press", "Shrugs", "Side Planks", "Preacher Curls", "Lat Pulls","Inclined Bench Press", "Six Inches"],
+        "agility": ["5-10-5"]]
     
     let soccerStriker = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Lunges", "Stagger Sprints", "Calf Raises", "One Legged Squats", "Dumbbell Step-Ups", "Split Squat", "Reverse Lunges", "Dumbbell Calf Raises", "Deep Side Lunges"],
-                    "upper": ["Bench Press", "Bicep Curls", "Tricep Extensions", "Overhead Press", "Dumbbell Press", "Leg Raise", "Dips", "Pullups", "Six Inches", "Military Press", "Lat Pulls", "Shrugs", "Planks", "Side Planks"],
-                    "agility": ["5-10-5", "Weave The Cones", "Box Jumps", "Low In The Corner", "Penalty Shots", "Run", "Step Over Dribble", "Lateral Shuffle", "Lateral Crossovers", "Upper 90", "Corner Kicks", "Spin Dribble", "From Beyond The 18", "Running Dribble"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Lunges", "Stagger Sprints", "Calf Raises", "One Legged Squats", "Dumbbell Step-Ups", "Split Squat", "Reverse Lunges", "Dumbbell Calf Raises", "Deep Side Lunges"],
+        "upper": ["Bench Press", "Bicep Curls", "Tricep Extensions", "Overhead Press", "Dumbbell Press", "Leg Raise", "Dips", "Pullups", "Six Inches", "Military Press", "Lat Pulls", "Shrugs", "Planks", "Side Planks"],
+        "agility": ["5-10-5", "Weave The Cones", "Box Jumps", "Low In The Corner", "Penalty Shots", "Run", "Step Over Dribble", "Lateral Shuffle", "Lateral Crossovers", "Upper 90", "Corner Kicks", "Spin Dribble", "From Beyond The 18", "Running Dribble"]]
     
     let soccerMidfield = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Calf Raises", "Reverse Lunges", "Split Squat", "Dumbbell Step-Ups", "Walking Lunges", "Hamstring Curls", "One Legged Squats", "Deep Side Lunges", "Dumbbell Calf Raises"],
-                    "upper": ["Dumbbell Press", "Bicep Curls", "Tricep Extensions", "Arnold Press", "Lat Pulls", "Six Inches", "Pullups", "Overhead Press", "Dips", "Leg Raise", "Military Press", "Inclined Bench Press", "Planks", "Side Planks"],
-                    "agility": ["5-10-5", "Weave The Cones", "Box Jumps", "Settling The Ball", "Penalty Shots", "Run", "Step Over Dribble", "Lateral Shuffle", "Lateral Crossovers", "Crossing", "Corner Kicks", "Spin Dribble", "From Beyond The 18", "Running Dribble"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Calf Raises", "Reverse Lunges", "Split Squat", "Dumbbell Step-Ups", "Walking Lunges", "Hamstring Curls", "One Legged Squats", "Deep Side Lunges", "Dumbbell Calf Raises"],
+        "upper": ["Dumbbell Press", "Bicep Curls", "Tricep Extensions", "Arnold Press", "Lat Pulls", "Six Inches", "Pullups", "Overhead Press", "Dips", "Leg Raise", "Military Press", "Inclined Bench Press", "Planks", "Side Planks"],
+        "agility": ["5-10-5", "Weave The Cones", "Box Jumps", "Settling The Ball", "Penalty Shots", "Run", "Step Over Dribble", "Lateral Shuffle", "Lateral Crossovers", "Crossing", "Corner Kicks", "Spin Dribble", "From Beyond The 18", "Running Dribble"]]
     
     let soccerDefense = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Calf Raises", "Reverse Lunges", "Split Squat", "Dumbbell Step-Ups", "Walking Lunges", "Dumbbell Calf Raises", "One Legged Squats", "Deep Side Lunges", "Dumbbell Calf Raises"],
-                    "upper": ["Bench Press", "Overhead Press", "Dumbbell Press", "Tricep Extensions", "Planks", "Bicep Curls", "Arnold Press", "Inclined Bench Press", "Six Inches", "Preacher Curls", "Military Press", "Side Lateral Raise", "Forearm Twists", "Side Planks"],
-                    "agility": ["5-10-5", "Man in the Middle", "Box Jumps", "Weave the Cones", "Lateral Shuffle", "Stagger Sprints", "Lateral Crossovers", "Headers", "Crossing", "Settling the Ball", "Long Pass", "Standing Long Jumps", "Long Throw In", "From Beyond The 18"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Calf Raises", "Reverse Lunges", "Split Squat", "Dumbbell Step-Ups", "Walking Lunges", "Dumbbell Calf Raises", "One Legged Squats", "Deep Side Lunges", "Dumbbell Calf Raises"],
+        "upper": ["Bench Press", "Overhead Press", "Dumbbell Press", "Tricep Extensions", "Planks", "Bicep Curls", "Arnold Press", "Inclined Bench Press", "Six Inches", "Preacher Curls", "Military Press", "Side Lateral Raise", "Forearm Twists", "Side Planks"],
+        "agility": ["5-10-5", "Man in the Middle", "Box Jumps", "Weave the Cones", "Lateral Shuffle", "Stagger Sprints", "Lateral Crossovers", "Headers", "Crossing", "Settling the Ball", "Long Pass", "Standing Long Jumps", "Long Throw In", "From Beyond The 18"]]
     
     let soccerGoalie = [
-                    "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Calf Raises", "Reverse Lunges", "Split Squat", "Dumbbell Step-Ups", "Walking Lunges", "Dumbbell Calf Raises", "One Legged Squats", "Deep Side Lunges", "Dumbbell Calf Raises"],
-                    "upper": ["Bench Press", "Overhead Press", "Dumbbell Press", "Tricep Extensions", "Planks", "Bicep Curls", "Planks", "Inclined Bench Press", "Six Inches", "Preacher Curls", "Military Press", "Side Lateral Raise", "Forearm Twists", "Side Planks"],
-                    "agility": ["5-10-5", "Vertical Leaps", "Box Jumps", "Punting", "Weave the Cones", "Lateral Shuffle", "Stagger Sprints", "Lateral Crossovers", "Fast Hands Drill", "Drop Kick", "Long Pass", "Standing Long Jumps", "Penalty Shots", "Stopping Penalty Shots"]]
+        "legDay": ["Stretch", "Leg Press", "Squat", "Hang Clean", "Deadlift", "Calf Raises", "Reverse Lunges", "Split Squat", "Dumbbell Step-Ups", "Walking Lunges", "Dumbbell Calf Raises", "One Legged Squats", "Deep Side Lunges", "Dumbbell Calf Raises"],
+        "upper": ["Bench Press", "Overhead Press", "Dumbbell Press", "Tricep Extensions", "Planks", "Bicep Curls", "Planks", "Inclined Bench Press", "Six Inches", "Preacher Curls", "Military Press", "Side Lateral Raise", "Forearm Twists", "Side Planks"],
+        "agility": ["5-10-5", "Vertical Leaps", "Box Jumps", "Punting", "Weave the Cones", "Lateral Shuffle", "Stagger Sprints", "Lateral Crossovers", "Fast Hands Drill", "Drop Kick", "Long Pass", "Standing Long Jumps", "Penalty Shots", "Stopping Penalty Shots"]]
     
     
     var selectedWorkout = ["legDay": ["","","","","","","","","","","","","",""], "upper": ["","","","","","","","","","","","","",""], "agility": ["","","","","","","","","","","","","",""]]
     
-    var workouts = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -1781,7 +1790,7 @@ extension WorkoutDisplayViewController: UITableViewDataSource{
         
         
         if history.count == 0{
-            cell.contentView.backgroundColor = UIColor.white
+           cell.contentView.backgroundColor = UIColor.white
         }
         else{
             for i in 0..<history.count{
@@ -1790,6 +1799,7 @@ extension WorkoutDisplayViewController: UITableViewDataSource{
                     print(history[i].exercise!)
                 }
             }
+            
             
         }
         

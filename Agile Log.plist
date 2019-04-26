@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>Armond Berry</key>
+<array>
 	<array/>
-	<key>Liam Byrne</key>
 	<array/>
-	<key>Luke Deviney</key>
 	<dict/>
-	<key>Jonathan Evans</key>
 	<dict/>
-	<key>Nicholas Vincent</key>
 	<dict/>
-	<key>Riley Williams</key>
 	<dict>
 		<key>Chart stuff</key>
 		<dict>
@@ -42,5 +36,5 @@
 			<date>2019-02-18T12:23:10Z</date>
 		</dict>
 	</dict>
-</dict>
+</array>
 </plist>

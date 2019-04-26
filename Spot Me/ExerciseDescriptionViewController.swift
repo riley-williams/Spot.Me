@@ -766,6 +766,9 @@ class ExerciseDescriptionViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        let repsCheck: Int? = Int(RepsTextField.text!)
+        let setsCheck: Int? = Int(RepsTextField.text!)
+        let weightCheck: Int? = Int(RepsTextField.text!)
         
         
         
@@ -1397,6 +1400,7 @@ class ExerciseDescriptionViewController: UIViewController {
         
         
         
+        
         //block of code sends the data up to the AppDelegate before the segue
         let sharedData = UIApplication.shared.delegate as! AppDelegate
         sharedData.passUserWorkoutData(userWorkout)
@@ -1414,7 +1418,53 @@ class ExerciseDescriptionViewController: UIViewController {
         
         }
         
-        if segue.identifier == "CompletedExercise"{
+    
+        
+        if Int(SetsTextField.text!) == nil{
+            let wrongTypeAlert = UIAlertController(title: "Enter Numbers For Each Field", message: "You must enter a numerical value for each field", preferredStyle: .alert)
+         
+        
+            present(wrongTypeAlert, animated: true){
+                sleep(1)
+            }
+            
+            
+            
+        }
+        else if Int(RepsTextField.text!) == nil{
+            
+            let wrongTypeAlert = UIAlertController(title: "Enter Numbers For Each Field", message: "You must enter a numerical value for each field", preferredStyle: .alert)
+           
+            
+            present(wrongTypeAlert, animated: true){
+                sleep(1)
+            }
+            
+        }
+        else if Int(weightTextField.text!) == nil{
+            
+            let wrongTypeAlert = UIAlertController(title: "Enter Numbers For Each Field", message: "You must enter a numerical value for each field", preferredStyle: .alert)
+            
+           
+            present(wrongTypeAlert, animated: true){
+                sleep(1)
+            }
+            
+        }
+        
+        else{
+            if segue.identifier == "CompletedExercise"  {
+            
+            
+            
+            
+            
+            
+           
+            
+           
+            
+            
             exerciseSets = Int(SetsTextField.text!)!
             exerciseReps = Int(RepsTextField.text!)!
             exerciseWeight = Int(weightTextField.text!)!
@@ -1440,11 +1490,16 @@ class ExerciseDescriptionViewController: UIViewController {
             destinationVC.lift = thisLift
             destinationVC.thisExercise = exercise
         }
+        
+      }
+        
+      
     }
     
     // Do Not Delete, is the observer for the button which updates the workout
     @IBAction func GoBackButton(_ sender: Any) {
-       
+        
+        
     }
     
     // Do Not Delete, is the observer for the button which completes the exercise
