@@ -39,8 +39,7 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 		if let source = self.dataSource {
 			let layerTypes = source.layers()
 			
-			let grid = source.gridLines(rect: contentRect)
-			drawGrid(horizontalLines: grid.horizontal, verticalLines: grid.vertical)
+			drawGrid()
 			
 			for idx in 0..<layerTypes.count {
 				let data = source.visibleData(rect: contentRect, layer: idx)
@@ -53,7 +52,8 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 				case .Bar:
 					assertionFailure("Layer type not implemented")
 				case .Area:
-					assertionFailure("Layer type not implemented")
+					let d = data as! [CGPoint]
+					drawAreaChart(data: d)
 				default:
 					assertionFailure("Layer type not implemented")
 				}
@@ -64,38 +64,100 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 	
 	
 	
-	func drawGrid(horizontalLines:[CGFloat] = [], verticalLines:[CGFloat] = []) {
+	func drawGrid() {
 		//Draw gridlines
-		let path = UIBezierPath()
+		var path = UIBezierPath()
 		
-		if horizontalLines.count > 0 {
-			for y in horizontalLines {
-				if safeRect.contains(CGPoint(x:safeRect.midX, y:y)) {
-					let vY = CtoVy(y)
-					path.move(to: CGPoint(x: 0, y: vY))
-					path.addLine(to: CGPoint(x: width, y: vY))
-					
-					let txtLayer = CATextLayer()
-					txtLayer.string = "\(y)"
-					txtLayer.frame = CGRect(x: 5, y: vY, width: 100, height: 50)
-					txtLayer.fontSize = 12
-					txtLayer.contentsScale = UIScreen.main.scale
-
-					txtLayer.foregroundColor = UIColor.black.cgColor
-					self.layer.addSublayer(txtLayer)
-				}
-			}
-		}
-		if verticalLines.count > 0 {
-			for x in verticalLines {
+		let minorHorizontalLines:[CGFloat] = computeMinorHorizontalLines()
+		let majorHorizontalLines:[CGFloat] = computeMajorHorizontalLines()
+		let minorVerticalLines:[CGFloat] = []
+		let majorVerticalLines:[CGFloat] = []
+		
+		
+		UIColor.lightGray.setStroke()
+		
+		if minorVerticalLines.count > 0 {
+			for x in minorVerticalLines {
 				let vX = CtoVx(x)
 				path.move(to: CGPoint(x: vX, y: 0))
 				path.addLine(to: CGPoint(x: vX, y: height))
 			}
 		}
 		
+		if minorHorizontalLines.count > 0 {
+			for y in minorHorizontalLines {
+				let vY = CtoVy(y)
+				path.move(to: CGPoint(x: 0, y: vY))
+				path.addLine(to: CGPoint(x: width, y: vY))
+			}
+		}
+		
+		path.stroke()
+		
+		path = UIBezierPath()
+		UIColor.darkGray.setStroke()
+		
+		if majorHorizontalLines.count > 0 {
+			for y in majorHorizontalLines {
+				let vY = CtoVy(y)
+				path.move(to: CGPoint(x: 0, y: vY))
+				path.addLine(to: CGPoint(x: width, y: vY))
+				
+				let txtLayer = CATextLayer()
+				txtLayer.string = "\(y)"
+				txtLayer.frame = CGRect(x: 5, y: vY, width: 100, height: 50)
+				txtLayer.fontSize = 12
+				txtLayer.contentsScale = UIScreen.main.scale
+				txtLayer.foregroundColor = UIColor.black.cgColor
+				self.layer.addSublayer(txtLayer)
+			}
+		}
+		
+		
+		if majorVerticalLines.count > 0 {
+			for x in majorVerticalLines {
+				let vX = CtoVx(x)
+				path.move(to: CGPoint(x: vX, y: 50))
+				path.addLine(to: CGPoint(x: vX, y: height))
+				
+				let txtLayer = CATextLayer()
+				txtLayer.string = "\(x)"
+				txtLayer.frame = CGRect(x: vX, y: 50, width: 100, height: 50)
+				txtLayer.fontSize = 12
+				txtLayer.contentsScale = UIScreen.main.scale
+				txtLayer.foregroundColor = UIColor.black.cgColor
+				self.layer.addSublayer(txtLayer)
+			}
+		}
+		
 		path.stroke()
 	}
+	
+	
+	func computeMajorHorizontalLines() -> [CGFloat] {
+		let spacing: CGFloat = pow(5,CGFloat(Int(log(contentRect.height)/log(5))))
+		let startY = contentRect.minY-contentRect.minY.truncatingRemainder(dividingBy: spacing)
+		
+		var lines: [CGFloat] = []
+		for y in stride(from: startY, through: contentRect.maxY, by: spacing) {
+			lines.append(y)
+		}
+		
+		return lines
+	}
+	
+	func computeMinorHorizontalLines() -> [CGFloat] {
+		let spacing: CGFloat = pow(5,CGFloat(Int(log(contentRect.height)/log(5)))-1)
+		let startY = contentRect.minY-contentRect.minY.truncatingRemainder(dividingBy: spacing)
+		
+		var lines: [CGFloat] = []
+		for y in stride(from: startY, through: contentRect.maxY, by: spacing) {
+			lines.append(y)
+		}
+		
+		return lines
+	}
+	
 	
 	func drawLineChart(data: [CGPoint]) {
 		if data.count > 1 {
@@ -110,13 +172,36 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 				let y = CtoVy(data[i].y)
 				path.addLine(to: CGPoint(x: x, y: y))
 			}
-			
+			path.lineWidth = 2
+			path.lineJoinStyle = .round
 			path.stroke()
 		}
 	}
 	
 	
-	
+	func drawAreaChart(data: [CGPoint]) {
+		if data.count > 1 {
+			let path = UIBezierPath()
+			let x0 = CtoVx(data[0].x)
+			let y0 = CtoVy(0)
+			path.move(to: CGPoint(x: x0, y: y0))
+			
+			for i in 0..<data.count {
+				let x = CtoVx(data[i].x)
+				let y = CtoVy(data[i].y)
+				path.addLine(to: CGPoint(x: x, y: y))
+			}
+			
+			let x1 = CtoVx(data.last!.x)
+			let y1 = CtoVy(0)
+			path.addLine(to: CGPoint(x: x1, y: y1))
+			
+			
+			path.lineWidth = 2
+			path.lineJoinStyle = .round
+			path.fill(with: .normal, alpha: 0.5)
+		}
+	}
 	
 	
 	//convert a point from the content space to view space
@@ -200,7 +285,6 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 protocol SMChartDataSource {
 	func layers() -> [SMLayerType]
 	func visibleData(rect:CGRect, layer:Int) -> [Any]
-	func gridLines(rect:CGRect) -> (horizontal:[CGFloat], vertical:[CGFloat])
 }
 
 

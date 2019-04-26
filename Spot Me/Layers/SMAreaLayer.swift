@@ -10,5 +10,5 @@ import UIKit
 
 class SMAreaLayer: SMLayer {
 	var type: SMLayerType = .Area
-	var data:[(origin:CGPoint, height: CGFloat)] = []
+	var data:[CGPoint] = []
 }
