@@ -17,17 +17,9 @@ class WorkoutDisplayViewController: UIViewController {
     var workoutType = "legDay"
     var workoutLevel = "Beginner"
     var thisExercise: String?
-    let userHistory = WorkoutHistory()
-    var history = [LiftObject]()
-    var legHistory = [LiftObject]()
-    var legHistoryInt = [LiftObject]()
-    var legHistoryAdv = [LiftObject]()
-    var upperHistory = [LiftObject]()
-    var upperHistoryInt = [LiftObject]()
-    var upperHistoryAdv = [LiftObject]()
-    var agilityHistory = [LiftObject]()
-    var agilityHistoryInt = [LiftObject]()
-    var agilityHistoryAdv = [LiftObject]()
+    var userHistory = WorkoutHistory()
+    var localHistory = [LiftObject]()
+    var globalHistory = [LiftObject]()
     var strings = [String]()
     var workouts = [String]()
     
@@ -162,6 +154,7 @@ class WorkoutDisplayViewController: UIViewController {
         
         self.sportLabel.text = "\(sportName!): "
         self.positionLabel.text = positionName
+        view.backgroundColor = UIColor.init(displayP3Red: 255, green: 128/255, blue: 0, alpha: 1)
         
         
         
@@ -464,11 +457,15 @@ class WorkoutDisplayViewController: UIViewController {
         }
             
         else {}
-        workouts.append(contentsOf: selectedWorkout.keys)
+        
         
         
         
     }
+    
+    
+   
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -487,8 +484,9 @@ class WorkoutDisplayViewController: UIViewController {
            destinationVC.sportName = sportName
            destinationVC.positionName = positionName
            destinationVC.workoutLevel = workoutLevel
-           destinationVC.history = history
+           destinationVC.history = localHistory
            destinationVC.workoutType = workoutType
+           destinationVC.globalHistory = globalHistory
           
         }
         
@@ -524,7 +522,11 @@ class WorkoutDisplayViewController: UIViewController {
     }
     
     @IBAction func myUnwindFunction(unwindSegue: UIStoryboardSegue){
-        print("Stuff")
+        
+        workouts.append(contentsOf: selectedWorkout.keys)
+        
+        
+      
         tableView.reloadData()
     }
     
@@ -534,15 +536,15 @@ class WorkoutDisplayViewController: UIViewController {
         // control for the workout type selection
         
         if sender.selectedSegmentIndex == 0{
-            history.removeAll()
+            localHistory.removeAll()
             workoutType = "legDay"
         }
         else if sender.selectedSegmentIndex == 1{
-            history.removeAll()
+            localHistory.removeAll()
             workoutType = "upper"
         }
         else if sender.selectedSegmentIndex == 2{
-            history.removeAll()
+            localHistory.removeAll()
             workoutType = "agility"
         }
         tableView.reloadData()
@@ -554,15 +556,15 @@ class WorkoutDisplayViewController: UIViewController {
         //control for the workout level selection
         
         if sender.selectedSegmentIndex == 0{
-            history.removeAll()
+            localHistory.removeAll()
             workoutLevel = "Beginner"
         }
         else if sender.selectedSegmentIndex == 1{
-            history.removeAll()
+            localHistory.removeAll()
             workoutLevel = "Intermediate"
         }
         else if sender.selectedSegmentIndex == 2{
-            history.removeAll()
+            localHistory.removeAll()
             workoutLevel = "Advanced"
         }
         tableView.reloadData()
@@ -638,11 +640,14 @@ extension WorkoutDisplayViewController: UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
         
+        
+        
         var exercise = "default"
         var reps = 0
         
         let setsAndRepsLabel = cell.viewWithTag(200) as! UILabel
-       
+        var counter = 0
+        
         
         // this block of if else statements that controls which exercise set will be displayed
         
@@ -689,6 +694,7 @@ extension WorkoutDisplayViewController: UITableViewDataSource{
             if userWorkout!.squatSets == 0{
                 userWorkout!.squatSets = 3
                 userWorkout!.squatReps = 8
+                
             }
             setsAndRepsLabel.text = "(\(userWorkout!.squatSets!) x \(userWorkout!.squatReps!))"
         }
@@ -1101,6 +1107,8 @@ extension WorkoutDisplayViewController: UITableViewDataSource{
                 userWorkout!.reverseLungesReps = 8
             }
             setsAndRepsLabel.text = "(\(userWorkout!.reverseLungesSets!) x \(userWorkout!.reverseLungesReps!))"
+            cell.backgroundColor = UIColor.blue
+            
         }
             
         else if (exercise == "Reverse Lunges" && workoutLevel == "Intermediate"){
@@ -1784,24 +1792,52 @@ extension WorkoutDisplayViewController: UITableViewDataSource{
             setsAndRepsLabel.text = "(5 Times)"
         }
             
+       
+            
+        
+            
         
         // if not specified return no text label
         else{setsAndRepsLabel.text = ""}
         
         
-        if history.count == 0{
-           cell.contentView.backgroundColor = UIColor.white
+        
+        
+        
+        if cell.reuseIdentifier! == "MyCell"{
+            cell.contentView.backgroundColor = UIColor.black
+            tableView.backgroundColor = UIColor.black
+            cell.textLabel?.textColor = UIColor.white
+            setsAndRepsLabel.textColor = UIColor.white
         }
+        
+        
+        
+       
+        if localHistory.count == 0{
+           cell.contentView.backgroundColor = UIColor.black
+           tableView.backgroundColor = UIColor.black
+           cell.textLabel?.textColor = UIColor.white
+            setsAndRepsLabel.textColor = UIColor.white
+        }
+        
         else{
-            for i in 0..<history.count{
-                if history[i].exercise == cell.textLabel!.text{
-                    cell.contentView.backgroundColor = UIColor(displayP3Red: 0, green: 255/255, blue: 15/255, alpha: 0.2)
-                    print(history[i].exercise!)
+            for i in 0..<localHistory.count{
+                if localHistory[i].exercise == cell.textLabel!.text{
+                    cell.contentView.backgroundColor = UIColor(displayP3Red: 0, green: 255/255, blue: 15/255, alpha: 0.9)
+                    cell.textLabel?.textColor = UIColor.black
+                    setsAndRepsLabel.textColor = UIColor.black
+                    
                 }
+                
             }
-            
-            
         }
+        
+       
+       
+       
+        
+        
         
         
         

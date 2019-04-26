@@ -31,7 +31,7 @@ class WorkoutsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        tableView.backgroundColor = UIColor.init(displayP3Red: 255, green: 128/255, blue: 0, alpha: 0.75)
        sports.append(contentsOf: positions.keys)
         
         func filterList() { // should probably be called sort and not filter
@@ -80,6 +80,8 @@ extension WorkoutsViewController: UITableViewDataSource{
         let position = postionsInSport![indexPath.row]
         
         cell.textLabel?.text = position
+        cell.backgroundColor = UIColor.init(displayP3Red: 255, green: 128/255, blue: 0, alpha: 0.8)
+        
         return cell
     }
     

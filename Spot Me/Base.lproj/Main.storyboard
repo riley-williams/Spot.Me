@@ -109,6 +109,7 @@
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CRh-2r-zI6">
                                 <rect key="frame" x="16" y="133" width="343" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="AhW-4b-rak"/>
                                     <constraint firstAttribute="height" constant="28" id="Ohe-Fn-R50"/>
@@ -118,6 +119,7 @@
                                     <segment title="Core/Upper Body"/>
                                     <segment title="Agility Training"/>
                                 </segments>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="segmentedControl:" destination="rfU-jB-esx" eventType="valueChanged" id="QI8-M0-jfy"/>
                                 </connections>
@@ -155,6 +157,7 @@
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="clo-ud-bem">
                                 <rect key="frame" x="16" y="524" width="343" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="kRj-IJ-y44"/>
                                     <constraint firstAttribute="height" constant="27" id="kyf-Xm-JzR"/>
@@ -164,6 +167,7 @@
                                     <segment title="Intermediate"/>
                                     <segment title="Advanced"/>
                                 </segments>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="levelSegmentedControl:" destination="rfU-jB-esx" eventType="valueChanged" id="jtY-6n-xx2"/>
                                 </connections>
@@ -685,7 +689,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqz-v4-W0R">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqz-v4-W0R">
                                 <rect key="frame" x="169" y="308" width="36" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -789,7 +793,7 @@
                                     <constraint firstAttribute="width" constant="94" id="4Md-y2-jp4"/>
                                     <constraint firstAttribute="height" constant="84" id="OEg-y5-e22"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="icons8-deadlift-64"/>
+                                <state key="normal" backgroundImage="icons8-dumbbell-64"/>
                                 <connections>
                                     <action selector="WorkoutPlansButtonClicked:" destination="dv8-oq-tho" eventType="touchUpInside" id="A5A-lZ-cG1"/>
                                 </connections>
@@ -800,7 +804,7 @@
                                     <constraint firstAttribute="height" constant="86" id="mgk-XQ-YLC"/>
                                     <constraint firstAttribute="width" constant="94" id="o4W-2U-rFf"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="icons8-profile-64"/>
+                                <state key="normal" backgroundImage="icons8-resume-48"/>
                                 <connections>
                                     <action selector="FitnessDataButtonClicked:" destination="dv8-oq-tho" eventType="touchUpInside" id="PXN-Uc-7OP"/>
                                 </connections>
@@ -811,7 +815,7 @@
                                     <constraint firstAttribute="height" constant="86" id="Vlf-Gr-eJR"/>
                                     <constraint firstAttribute="width" constant="113" id="rWq-T6-sMl"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="icons8-tableware-64"/>
+                                <state key="normal" backgroundImage="icons8-ingredients-64"/>
                                 <connections>
                                     <action selector="NutritionButtonClicked:" destination="dv8-oq-tho" eventType="touchUpInside" id="cEC-Yh-9d9"/>
                                 </connections>
@@ -845,23 +849,22 @@
                                     <action selector="ChartsButtonClicked:" destination="dv8-oq-tho" eventType="touchUpInside" id="YNa-PA-4Z6"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ogo-U3-CC1">
-                                <rect key="frame" x="67" y="157" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="bJ0-WX-bzz"/>
-                                    <constraint firstAttribute="width" constant="240" id="mY3-Bm-ujU"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Plans" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SC-y2-iCf">
                                 <rect key="frame" x="34" y="509" width="119" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spot-me2" translatesAutoresizingMaskIntoConstraints="NO" id="Ogo-U3-CC1">
+                                <rect key="frame" x="27" y="112" width="318" height="226"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="318" id="Trx-yl-Zcd"/>
+                                    <constraint firstAttribute="height" constant="226" id="jla-3T-L7a"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="5UC-TC-Nnx" firstAttribute="trailing" secondItem="Ogo-U3-CC1" secondAttribute="trailing" constant="68" id="8y7-Fi-9aP"/>
                             <constraint firstItem="5UC-TC-Nnx" firstAttribute="trailing" secondItem="h6f-2U-8Jd" secondAttribute="trailing" constant="39" id="BJf-ih-mDj"/>
                             <constraint firstItem="1SC-y2-iCf" firstAttribute="leading" secondItem="5UC-TC-Nnx" secondAttribute="leading" constant="34" id="BTj-0j-kGo"/>
                             <constraint firstItem="GsJ-na-Hno" firstAttribute="leading" secondItem="5UC-TC-Nnx" secondAttribute="leading" constant="50" id="E7K-II-Hru"/>
@@ -869,6 +872,8 @@
                             <constraint firstItem="D0J-i4-FLh" firstAttribute="leading" secondItem="5UC-TC-Nnx" secondAttribute="leading" constant="46" id="JKK-J8-Mbt"/>
                             <constraint firstItem="GsJ-na-Hno" firstAttribute="top" secondItem="D0J-i4-FLh" secondAttribute="bottom" constant="20" id="Jab-VU-eL1"/>
                             <constraint firstItem="1SC-y2-iCf" firstAttribute="top" secondItem="GsJ-na-Hno" secondAttribute="bottom" constant="36" id="O5e-mh-qWh"/>
+                            <constraint firstItem="Ogo-U3-CC1" firstAttribute="leading" secondItem="5UC-TC-Nnx" secondAttribute="leading" constant="27" id="Q0K-hQ-eRi"/>
+                            <constraint firstItem="Ogo-U3-CC1" firstAttribute="top" secondItem="5UC-TC-Nnx" secondAttribute="top" constant="48" id="R9D-MF-BJc"/>
                             <constraint firstItem="h6f-2U-8Jd" firstAttribute="top" secondItem="JQJ-nm-Uta" secondAttribute="bottom" constant="7" id="ULd-dV-SgB"/>
                             <constraint firstItem="5UC-TC-Nnx" firstAttribute="trailing" secondItem="JQJ-nm-Uta" secondAttribute="trailing" constant="62.5" id="Xie-LJ-ZeH"/>
                             <constraint firstItem="5UC-TC-Nnx" firstAttribute="trailing" secondItem="hOx-BB-Ppr" secondAttribute="trailing" constant="50" id="XyW-Qg-PbG"/>
@@ -877,9 +882,8 @@
                             <constraint firstItem="wic-jS-kc9" firstAttribute="leading" secondItem="5UC-TC-Nnx" secondAttribute="leading" constant="46" id="dEi-hO-DCR"/>
                             <constraint firstItem="wic-jS-kc9" firstAttribute="top" secondItem="1SC-y2-iCf" secondAttribute="bottom" constant="8" id="gVS-uX-MkD"/>
                             <constraint firstItem="5UC-TC-Nnx" firstAttribute="bottom" secondItem="h6f-2U-8Jd" secondAttribute="bottom" constant="45" id="mzC-of-2gJ"/>
-                            <constraint firstItem="Ogo-U3-CC1" firstAttribute="top" secondItem="5UC-TC-Nnx" secondAttribute="top" constant="93" id="nXK-R6-HSZ"/>
-                            <constraint firstItem="Ogo-U3-CC1" firstAttribute="leading" secondItem="5UC-TC-Nnx" secondAttribute="leading" constant="67" id="tIb-e4-N6C"/>
                             <constraint firstItem="JQJ-nm-Uta" firstAttribute="top" secondItem="MmV-up-lbm" secondAttribute="bottom" constant="36" id="y2r-0v-fgN"/>
+                            <constraint firstItem="5UC-TC-Nnx" firstAttribute="trailing" secondItem="Ogo-U3-CC1" secondAttribute="trailing" constant="30" id="yu1-xn-SqX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5UC-TC-Nnx"/>
                     </view>
@@ -1423,8 +1427,9 @@
     </scenes>
     <resources>
         <image name="icons8-combo-chart-64" width="48" height="48"/>
-        <image name="icons8-deadlift-64" width="48" height="48"/>
-        <image name="icons8-profile-64" width="48" height="48"/>
-        <image name="icons8-tableware-64" width="48" height="48"/>
+        <image name="icons8-dumbbell-64" width="48" height="48"/>
+        <image name="icons8-ingredients-64" width="48" height="48"/>
+        <image name="icons8-resume-48" width="36" height="36"/>
+        <image name="spot-me2" width="1077" height="1080"/>
     </resources>
 </document>

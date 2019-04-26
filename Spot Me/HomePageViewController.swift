@@ -17,7 +17,7 @@ class HomePageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .gray
+        view.backgroundColor = UIColor.init(displayP3Red: 255, green: 128/255, blue: 0, alpha: 0.75)
         
         // These two lines get data from the app delegate
         let sharedData = UIApplication.shared.delegate as! AppDelegate
