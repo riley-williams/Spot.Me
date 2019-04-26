@@ -32,6 +32,7 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 		return self.contentRect.insetBy(dx: -dx, dy: -dy)
 	}
 	
+	var lockToXAxis:Bool = true
 	
 	override func draw(_ rect: CGRect) {
 		self.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
@@ -53,6 +54,7 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 					assertionFailure("Layer type not implemented")
 				case .Area:
 					let d = data as! [CGPoint]
+					
 					drawAreaChart(data: d)
 				default:
 					assertionFailure("Layer type not implemented")
@@ -104,7 +106,7 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 				path.addLine(to: CGPoint(x: width, y: vY))
 				
 				let txtLayer = CATextLayer()
-				txtLayer.string = "\(y)"
+				txtLayer.string = "\(Int(y))"
 				txtLayer.frame = CGRect(x: 5, y: vY, width: 100, height: 50)
 				txtLayer.fontSize = 12
 				txtLayer.contentsScale = UIScreen.main.scale
@@ -262,8 +264,15 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 		let contentTranslation = CGPoint(x: -translation.x/width*contentRect.width, y: translation.y/height*contentRect.height)
 		contentRect.origin = contentRect.origin + contentTranslation
 		
+
+		if lockToXAxis {
+			contentRect.origin = CGPoint(x: contentRect.origin.x, y:0)
+		}
+		
+		//cleanup
 		sender.setTranslation(CGPoint.zero, in: self)
 		self.setNeedsDisplay()
+		self.dataSource?.viewDidChange()
 	}
 	
 	@objc func handlePinch(_ sender:UIPinchGestureRecognizer) {
@@ -271,8 +280,15 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 		let dx = (scale-1)*contentRect.width
 		let dy = (scale-1)*contentRect.height
 		contentRect = contentRect.insetBy(dx: dx, dy: dy)
+		
+		if lockToXAxis {
+			contentRect.origin = CGPoint(x: contentRect.origin.x, y:0)
+		}
+		
+		//cleanup
 		sender.scale = 1
 		self.setNeedsDisplay()
+		self.dataSource?.viewDidChange()
 	}
 	
 	func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -285,6 +301,7 @@ class SMChartView: UIView , UIGestureRecognizerDelegate {
 protocol SMChartDataSource {
 	func layers() -> [SMLayerType]
 	func visibleData(rect:CGRect, layer:Int) -> [Any]
+	func viewDidChange()
 }
 
 

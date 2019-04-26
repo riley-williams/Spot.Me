@@ -11,4 +11,5 @@ import UIKit
 
 protocol SMLayer {
 	var type:SMLayerType { get }
+	var color:UIColor { get set }
 }

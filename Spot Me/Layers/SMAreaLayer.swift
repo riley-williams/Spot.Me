@@ -11,4 +11,5 @@ import UIKit
 class SMAreaLayer: SMLayer {
 	var type: SMLayerType = .Area
 	var data:[CGPoint] = []
+	var color:UIColor = UIColor.black
 }

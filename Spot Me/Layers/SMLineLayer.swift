@@ -11,4 +11,5 @@ import UIKit
 class SMLineLayer: SMLayer {
 	var type: SMLayerType = .Line
 	var data:[CGPoint] = []
+	var color:UIColor = UIColor.black
 }

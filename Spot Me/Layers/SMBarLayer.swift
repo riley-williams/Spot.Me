@@ -11,4 +11,5 @@ import UIKit
 class SMBarLayer: SMLayer {
 	var type: SMLayerType = .Bar
 	var data:[(origin:CGPoint, height: CGFloat)] = []
+	var color:UIColor = UIColor.black
 }

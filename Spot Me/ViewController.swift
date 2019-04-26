@@ -26,6 +26,7 @@ class ViewController: UIViewController, SMChartDataSource, SMHealthKitQueryDeleg
 		
 		let altLayer = SMLineLayer()
 		altLayer.data = [(1,50), (2,10), (3,15), (4,25), (5,40), (6,60), (7,85), (8,100), (9,110), (10,60), (11,50), (12,30), (13,0)].map {CGPoint(x: $0.0 - 2.0, y: -0.5*$0.1 + 70.0)}
+		
 		//pack layers
 		self.chartLayers = [lineLayer, altLayer]
 		
@@ -64,5 +65,9 @@ class ViewController: UIViewController, SMChartDataSource, SMHealthKitQueryDeleg
 		
 	}
 	
+	
+	func viewDidChange() {
+		
+	}
 }
 

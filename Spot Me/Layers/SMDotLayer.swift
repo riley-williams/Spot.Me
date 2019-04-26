@@ -11,4 +11,5 @@ import UIKit
 class SMDotLayer: SMLayer {
 	var type: SMLayerType = .Dot
 	var data:[CGPoint] = []
+	var color:UIColor = UIColor.black
 }
